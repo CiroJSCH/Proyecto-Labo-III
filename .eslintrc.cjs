@@ -12,5 +12,6 @@ module.exports = {
   rules: {
     'no-param-reassign': 'off',
     'import/extensions': 'off',
+    'linebreak-style': 0,
   },
 };
