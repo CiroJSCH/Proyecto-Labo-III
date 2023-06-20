@@ -107,7 +107,10 @@
           <p class="font-text sm:text-[18px] lg:text-[20px] mt-2 px-1">
             Get access to your account
           </p>
-          <form class="w-[90%] mx-auto mt-5 flex flex-col gap-5">
+          <form
+            class="w-[90%] mx-auto mt-5 flex flex-col gap-5"
+            id="signInForm"
+          >
             <div
               class="border-l-8 border-l-accent bg-white rounded-md flex items-center p-3"
             >
@@ -173,5 +176,8 @@
         </div>
       </section>
     </main>
+    <script src="../scripts/login/main.js" type="module"></script>
+    <script src="../scripts/login/googleSignIn.js" type="module"></script>
+    <script src="../scripts/login/githubSignIn.js" type="module"></script>
   </body>
 </html>
