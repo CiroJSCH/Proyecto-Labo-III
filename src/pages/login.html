@@ -107,12 +107,10 @@
           <p class="font-text sm:text-[18px] lg:text-[20px] mt-2 px-1">
             Get access to your account
           </p>
-          <form
-            class="w-[90%] mx-auto mt-5 flex flex-col gap-5"
-            id="signInForm"
-          >
+          <form class="w-[90%] mx-auto mt-5 flex flex-col" id="signInForm">
             <div
-              class="border-l-8 border-l-accent bg-white rounded-md flex items-center p-3"
+              id="emailContainer"
+              class="border-l-8 border-l-accent bg-white rounded-md flex items-center p-3 transition-colors duration-200"
             >
               <input
                 id="email"
@@ -123,7 +121,8 @@
               />
             </div>
             <div
-              class="border-l-8 border-l-accent bg-white rounded-md flex items-center justify-between p-3"
+              id="passwordContainer"
+              class="border-l-8 border-l-accent bg-white rounded-md flex items-center justify-between p-3 mt-5 transition-colors duration-200"
             >
               <input
                 id="password"
@@ -136,6 +135,7 @@
                 <i class="fa-solid fa-eye fa-lg text-black"></i>
               </span>
             </div>
+            <span class="text-rose-500 mt-2 h-[18px]" id="loginError"></span>
             <button
               id="signInBtn"
               type="submit"
