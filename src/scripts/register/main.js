@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../firebase/main.js';
 import errors from '../../firebase/errors.js';
+import changePasswordVisibility from '../common/changePasswordVisibility.js';
 
 // Fields
 const usernameContainer = document.getElementById('usernameContainer');
@@ -75,4 +76,14 @@ registerForm.addEventListener('submit', async (e) => {
       emailError.textContent = errors[error.code];
     }
   }
+});
+
+const passwordToggle = document.getElementById('password-toggle');
+passwordToggle.addEventListener('click', () => {
+  changePasswordVisibility('password');
+});
+
+const passwordToggle2 = document.getElementById('password-toggle2');
+passwordToggle2.addEventListener('click', () => {
+  changePasswordVisibility('password2', 'password-toggle2');
 });

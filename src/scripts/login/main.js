@@ -1,5 +1,11 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/main.js';
+import changePasswordVisibility from '../common/changePasswordVisibility.js';
+
+const passwordToggle = document.getElementById('password-toggle');
+passwordToggle.addEventListener('click', () => {
+  changePasswordVisibility('password');
+});
 
 const signInForm = document.getElementById('signInForm');
 
