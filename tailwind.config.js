@@ -17,7 +17,12 @@ export default {
       screens: {
         xs: '340px',
       },
+      backgroundImage: {
+        backgroundGradient:
+          'linear-gradient(180deg, rgba(13,13,13,1) 0%, rgba(28,28,28,1) 100%)',
+      },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  plugins: [require('tailwind-scrollbar')],
 };

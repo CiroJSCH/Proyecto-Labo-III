@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎬CineHub | Main</title>
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/b223d2f563.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header-container">
+      <h1 class="header-logo font-title text-text text-[30px]">
+        Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
+      </h1>
+      <nav class="nav-container">
+        <ul class="nav-list font-semibold">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Tv-Series</a></li>
+          <li class="account"></li>
+        </ul>
+        <div class="search">
+          <input class="font-semibold" type="text" placeholder="🔍 Search" />
+          <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass fa-sm"></i></button>
+        </div>
+      </nav>
+      <div class="hamburger">
+        <i class="fa-solid fa-bars fa-lg"></i>
+      </div>
+    </header>
+    <main class="main-container">
+      <div class="search-mobile">
+        <input class="font-semibold" type="text" placeholder="🔍 Search" />
+        <button class="search-button"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #878d97"></i> </button>
+      </div>
+      <section class="menu font-semibold">
+        <ul class="menu-list">
+          <p class="font-light">Menu</p>
+          <li>
+            <i class="fa-solid fa-house fa-sm" style="color: #878d97"></i> Home
+          </li>
+          <li>
+            <i class="fa-regular fa-heart fa-sm" style="color: #878d97"></i>
+            Favorites
+          </li>
+          <li>
+            <i class="fa-regular fa-clock fa-sm" style="color: #878d97"></i>
+
+            See Later
+          </li>
+          <li>
+            <i class="fa-solid fa-fire fa-sm" style="color: #878d97"></i>
+            Trending
+          </li>
+          <li>
+            <i
+              class="fa-solid fa-ranking-star fa-sm"
+              style="color: #878d97"
+            ></i>
+            Top Rated
+          </li>
+          <hr />
+          <li>
+            <i
+              class="fa-solid fa-question-circle fa-sm"
+              style="color: #878d97"
+            ></i>
+            Help
+          </li>
+          <li>
+            <i
+              class="fa-solid fa-arrow-right-from-bracket fa-sm"
+              style="color: #878d97"
+            ></i>
+            Exit
+          </li>
+        </ul>
+
+        <div class="user-section">
+          <div class="user-img"></div>
+          <div class="user-info">
+            <h6 class="font-semibold">Username</h6>
+            <p class="font-light">username@gmail.com</p>
+          </div>
+        </div>
+      </section>
+      <section class="movies">
+        <section class="trendig-movies">
+          <h2 class="font-semibold">Trending Movies 🔥</h2>
+          <div class="movie-container">
+            <img
+              src="../images/login.jpg"
+              alt="img-background"
+              class="img-background"
+            />
+            <div class="movie-img">
+              <img
+                class="movieimg"
+                draggable="false"
+                src="../images/register.jpg"
+                alt="movie-image"
+              />
+            </div>
+            <div class="movie-info">
+              <h3 class="font-semibold">Movie Tittle</h3>
+              <p class="font-semibold text-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                laudantium placeat magni, facere alias nesciunt, perferendis
+                autem necessitatibus quisquam voluptas nostrum.
+              </p>
+              <div class="movie-btns">
+                <button class="btn-details"><span class="font-light ">
+                  View Details 
+                </span> <i class="fa-solid fa-circle-info fa-sm" style="color: aliceblue;"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="top-rated-movies">
+          <h2 class="font-semibold">Top Rated⭐</h2>
+          <article class="movie-cover">
+            <button class="btn prev-btn">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+            <img
+              draggable="false"
+              class="topRated-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <img
+              draggable="false"
+              class="topRated-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <img
+              draggable="false"
+              class="topRated-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <img
+              draggable="false"
+              class="topRated-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <button class="btn next-btn">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </article>
+        </section>
+        <section class="user-recommend">
+          <h2 class="font-semibold">About your Interests 👀</h2>
+          <div class="movies-recommend">
+            <div class="user-recommend-movie">
+              <img
+                draggable="false"
+                class="img-recommend"
+                src="../images/register.jpg"
+                alt="movie-image"
+              />
+            </div>
+            <div class="user-recommend-movie">
+              <img
+                draggable="false"
+                class="img-recommend"
+                src="../images/register.jpg"
+                alt="movie-image"
+              />
+            </div>
+            <div class="user-recommend-movie">
+              <img
+                draggable="false"
+                class="img-recommend"
+                src="../images/register.jpg"
+                alt="movie-image"
+              />
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="upcoming">
+        <h2 class="font-semibold">Upcoming Movies 🍿</h2>
+        <div class="upcoming-wrapper">
+          <div class="upcoming-movie">
+            <img
+              draggable="false"
+              class="upcoming-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <h5 class="font-semibold">Movie Tittle | Coming on Friday</h5>
+            <p class="font-semibold">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              laudantium placeat magni, facere alias nesciunt, perferendis autem
+              necessitatibus quisquam voluptas nostrum.
+            </p>
+          </div>
+          <div class="upcoming-movie">
+            <img
+              draggable="false"
+              class="upcoming-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <h5 class="font-semibold">Movie Tittle | Coming on Friday</h5>
+            <p class="font-semibold">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              laudantium placeat magni, facere alias nesciunt, perferendis autem
+              necessitatibus quisquam voluptas nostrum.
+            </p>
+          </div>
+          <div class="upcoming-movie">
+            <img
+              draggable="false"
+              class="upcoming-img"
+              src="../images/register.jpg"
+              alt="movie-image"
+            />
+            <h5 class="font-semibold">Movie Tittle | Coming on Friday</h5>
+            <p class="font-semibold">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+              laudantium placeat magni, facere alias nesciunt, perferendis autem
+              necessitatibus quisquam voluptas nostrum.
+            </p>
+          </div>
+        </div>
+      </section>
+      <ul class="mobile-nav"> 
+        <li class="text-text font-light "> <i class="fa-solid fa-house fa-lg" style="color: #878d97"></i><span class="text-xs">Home</span></li>
+        <li class="text-text font-light"> <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #878d97"></i><span class="text-xs">Search</span></li>
+        <li class="text-text font-light"> <i class="fa-regular fa-heart fa-lg" style="color: #878d97"></i><span class="text-xs">Favorites</span></li>
+        <li class="text-text font-light"><i class="fa-regular fa-user fa-lg"  style="color: #878d97"></i><span  class="text-xs">Profile</span></li>
+    </ul>
+    </main>
+    <!-- <div class="mobile-main-container">
+      <div class="mobile-trending-movies">
+        <h2 class="font-semibold text-text">Trending Movies 🔥</h2>
+        <div class="mobile-movie-img">
+          <img
+            class="mobile-movieimg"
+            draggable="false"
+            src="../images/register.jpg"
+            alt="movie-image"
+          />
+        </div>
+      </div>
+      <div class="mobile-top-rated">
+        <h2 class="font-semibold text-text">Top Rated⭐</h2>
+        <div class="mobile-tp-img-container">
+          <img
+          class="mobile-img"
+          draggable="false"
+          src="../images/register.jpg"
+          alt="movie-image"
+        />
+        </div>
+      </div>
+    </div> -->
+    <br />
+    <hr />
+    <br>
+    <footer class="footer-container">
+      <div class="footer-logo">
+        <h1 class="font-title text-text text-[30px]">
+          Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
+        </h1>
+      </div>
+      <div class="footer-links">
+          <div class="about us">
+            <a  class="font-semibold" href="#">About Us</a>
+          </div>
+          <div class="contact-us">
+            <a class="font-semibold" href="#">Contact Us</a>
+            <div class="social-media">
+            </div>
+          </div>
+      </div>
+      <div class="rights-container">
+        <h4 class="font-semibold">© CineHub 2023</h4>
+      </div>
+    </div>
+    </footer>
+  </body>
+</html>
