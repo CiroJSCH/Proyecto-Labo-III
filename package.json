@@ -12,14 +12,19 @@
     "prepare-commit-msg": "devmoji -e --lint"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "tailwind-scrollbar": "^3.0.4",
+    "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "devmoji": "^2.3.0"
+    "devmoji": "^2.3.0",
+    "firebase": "^9.22.2"
   }
 }
