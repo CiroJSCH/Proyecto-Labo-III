@@ -54,7 +54,7 @@ desktopNavbar.classList.add(
   'z-[55]',
 );
 desktopNavbar.innerHTML = `
-  <div class="px-[80px] w-full flex items-center justify-between max-w-[1440px] mx-auto">
+  <div class="px-[80px] w-full flex items-center justify-between max-w-[1580px] mx-auto">
     <section class="flex items-center gap-5">
       <h1 class="font-title text-text text-[30px] pl-2">
         Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
