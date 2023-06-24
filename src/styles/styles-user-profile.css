@@ -39,6 +39,7 @@ body{
   width: 300px;
   border-radius: 50%;
   object-fit:cover;
+  object-position: center;
 
 }
 
@@ -77,6 +78,7 @@ body{
 .user .right .projects_data{
   display: flex;
   justify-content: space-between;
+
 }
 
 .user .right .info_data .data,
@@ -98,7 +100,7 @@ body{
 }
 
 .projects{
-  margin-top: 100px;
+  margin-top: 15%;
   text-align: center;
   user-select: none;
 }
@@ -112,11 +114,13 @@ body{
 .data{
    text-align: center;
 }
+
+
 /* CAROUSEL STYLES */
 
 .wrapper{
   display: flex;
-  max-width: 1100px;
+  max-width: 1200px;
   position: relative;
 }
 
@@ -136,22 +140,209 @@ body{
   user-select: none;
 }
 .carousel img{
-  height: 120px;
+  height: 200px;
   object-fit: cover;
   user-select: none;
   margin-left: 14px;
   width: calc(100% / 8);
+  border-radius: 10%;
 }
 .carousel img:first-child{
   margin-left: 0px;
 }
+
+/* SWIPER STYLES */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+/* MEDIA SCREEN EVENTS */
+
+@media screen and (max-width: 1060px) {
+  .user .left img{
+
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
 @media screen and (max-width: 900px) {
   .carousel img{
-    width: calc(100% / 2);
+    width: calc(100% / 4);
+  }
+  .user .left img{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
+@media screen and (max-width: 756px) {
+  .user .left img{
+
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
+@media screen and (max-width: 614px) {
+  .user .left img{
+
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
   }
 }
 @media screen and (max-width: 550px) {
   .carousel img{
+    width: calc(100% / 3);
+  }
+  .user .left img{
+
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
+@media screen and (max-width: 500px) {
+
+  .user{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+    display: grid;
+    border-radius: 3%;
+  }
+  
+  .user .left{
+    height: 100%;
     width: 100%;
+    background-color: var(--accent);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .user .left img{
+  
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+  
+  .user .right{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+  }
+
+  .carousel img{
+    height: 120px;
+    margin-left: 14px;
+    width: calc(100% / 4);
+  }
+  
+  .projects{
+    margin-top: 5%;
+    text-align: center;
+    user-select: none;
+    height: 40%;
+    width: 90%;
+  }
+  .info{
+    text-align: center;
+    margin-top: 5%;
+    user-select: none;
+  }
+  
+  .data{
+    text-align: center;
+  }
+
+  .swiper {
+    width: 10%;
+    height: 10%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+  .carousel img{
+    width: calc(100% / 3);
+  }
+  .user .left img{
+
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
+@media screen and (max-width: 350px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+  .user .left img{
+
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
   }
 }
