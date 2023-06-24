@@ -1,4 +1,3 @@
-// Función para llamar a la API y obtener las películas populares
 const getPopularMovies = async () => {
   const response = await fetch(
     'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=1',
@@ -7,7 +6,6 @@ const getPopularMovies = async () => {
   return data.results;
 };
 
-// Función para actualizar el contenido de las películas populares en el DOM
 const updatePopularMovies = async () => {
   try {
     const movies = await getPopularMovies();
@@ -26,32 +24,8 @@ const updatePopularMovies = async () => {
     console.log('Error al obtener la lista de películas:', error);
   }
 };
-// Actualizar películas populares al cargar la página
 updatePopularMovies();
 
-// Elementos de la barra de navegación
-const headerEl = document.querySelector('header');
-const menuEl = document.querySelector('#menu-icon');
-const navbarEl = document.querySelector('.navbar');
-
-// Cambiar clase "shadow" en la barra de navegación al hacer scroll
-window.addEventListener('scroll', function () {
-  headerEl.classList.toggle('shadow', window.scrollY > 0);
-});
-
-// Mostrar/ocultar menú al hacer clic en el ícono del menú
-menuEl.addEventListener('click', () => {
-  menuEl.classList.toggle('bx-x');
-  navbarEl.classList.toggle('active');
-});
-
-// Ocultar menú al hacer scroll
-window.addEventListener('scroll', () => {
-  menuEl.classList.remove('bx-x');
-  navbarEl.classList.remove('active');
-});
-
-// Inicializar el slider de tendencias
 var TrandingSlider = new Swiper('.tranding-slider', {
   effect: 'coverflow',
   grabCursor: true,
@@ -74,10 +48,7 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   },
 });
 
-// Obtener el elemento del slider de películas
 const movieSlider = document.getElementById('movieSlider');
-
-// Obtener las películas populares de la API y mostrarlas en el slider
 const apiUrl =
   'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=1';
 fetch(apiUrl)
@@ -172,7 +143,6 @@ const renderTrendingMovies = async () => {
 
   tendenciaSlider.update();
 };
-
 renderTrendingMovies();
 
 const llamarApi = async () => {
@@ -223,7 +193,6 @@ const llamarApi1 = async () => {
   const data = await response.json();
   return data.results;
 };
-
 llamarApi1()
   .then((data) => {
     const bannerContainer = document.querySelector('#banner .swiper-wrapper');
@@ -274,15 +243,10 @@ llamarApi1()
     console.error('Error al obtener la lista de películas:', error);
   });
 
-// URL de la API de TMDb
 const API_URL = 'https://api.themoviedb.org/3';
-// Clave de la API de TMDb (reemplaza 'YOUR_API_KEY' con tu propia clave)
 const API_KEY = '7e166e717fba198f23734103f094beb2';
-
-// Cantidad de imágenes a obtener de la API
 const NUM_IMAGENES = 9;
 
-// Obtener imágenes de la API de TMDb
 async function obtenerImagenes() {
   try {
     const response = await fetch(
@@ -303,7 +267,6 @@ async function obtenerImagenes() {
   }
 }
 
-// Generar elementos HTML para las imágenes
 async function generarElementosHTML() {
   const imagenes = await obtenerImagenes();
   const swiperWrapper = document.getElementById('swiperWrapper');
@@ -318,12 +281,9 @@ async function generarElementosHTML() {
     swiperSlide.appendChild(img);
     swiperWrapper.appendChild(swiperSlide);
   });
-
-  // Inicializar Swiper después de cargar las imágenes
   iniciarSwiper();
 }
 
-// Inicializar el slider Swiper
 function iniciarSwiper() {
   var swiper = new Swiper('.mySwiper', {
     effect: 'coverflow',
@@ -342,6 +302,4 @@ function iniciarSwiper() {
     },
   });
 }
-
-// Generar elementos HTML al cargar la página
 window.addEventListener('load', generarElementosHTML);
