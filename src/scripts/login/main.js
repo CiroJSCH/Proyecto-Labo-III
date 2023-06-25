@@ -36,7 +36,8 @@ signInForm.addEventListener('submit', async (e) => {
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = `${window.location.origin}/src/pages/home.html`;
+    sessionStorage.setItem('userId', auth.currentUser.uid);
+    window.location.href = `${window.location.origin}/src/pages/main.html`;
   } catch (error) {
     loginError.innerHTML = errors[error.code];
 
