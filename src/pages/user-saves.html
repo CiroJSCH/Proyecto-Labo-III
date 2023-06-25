@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nombre de la pelicula</title>
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <meta name="referrer" content="no-referrer" />
+  </head>
+  <body class="relative">
+    <!-- Mobile navbar -->
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside id="aside-mobile"></aside>
+    <!-- Content Wrapper -->
+    <div
+      class="bg-backgroundGradient flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
+    >
+      <!-- Aside desktop -->
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex w-full min-h-screen lg:min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
+      >
+        <section
+          id="movies-container"
+          class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-[100px] lg:mt-0 min-h-[500px]"
+        ></section>
+      </main>
+    </div>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../scripts/common/aside.js" type="module"></script>
+    <script src="../scripts/common/navbar.js"></script>
+    <script src="../scripts/userSaves/main.js" type="module"></script>
+  </body>
+</html>

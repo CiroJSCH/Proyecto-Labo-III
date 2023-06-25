@@ -50,17 +50,17 @@ asideMobile.innerHTML = `
       <h1 class="font-title text-text text-[30px] pl-2">
         Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
       </h1>
-      <ul
+      <section
         class="flex flex-col items-center gap-7 text-text text-[18px] pt-5"
       >
-        <li class="flex items-center justify-between w-[80%] gap-2">
+        <a href="./user-saves.html?filter=favorites" class="flex items-center justify-between w-[80%] gap-2">
           <i class="fa-regular fa-heart fa-lg"></i>
           <span class="font-semibold">Favorites</span>
-        </li>
-        <li class="flex items-center justify-between w-[80%] gap-2">
+        </a>
+        <a href="./user-saves.html?filter=seeLater" class="flex items-center justify-between w-[80%] gap-2">
           <i class="fa-regular fa-clock fa-lg"></i>
           <span class="font-semibold">See Later</span>
-        </li>
+        </a>
         <li class="flex items-center justify-between w-[80%] gap-2">
           <i class="fa-solid fa-fire fa-lg"></i>
           <span class="font-semibold">Trending</span>
@@ -69,7 +69,7 @@ asideMobile.innerHTML = `
           <i class="fa-solid fa-star"></i>
           <span class="font-semibold">Top Rated</span>
         </li>
-      </ul>
+      </section>
     </section>
     <section
       class="absolute bottom-0 left-0 h-[70px] bg-secondaryBtn w-full flex items-center justify-between px-3"
@@ -112,10 +112,10 @@ asideDesktop.innerHTML = `
       <i class="fa-regular fa-circle-right"></i>
     </button>
 
-    <ul
+    <section
       class="flex flex-col items-center gap-7 text-text text-[18px] mt-[70px]"
     >
-      <li
+      <a href="./user-saves.html?filter=favorites"
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i class="fa-regular fa-heart fa-lg w-[25.31px] text-center"></i>
@@ -123,16 +123,17 @@ asideDesktop.innerHTML = `
           class="text-[24px] font-medium hidden aside-text transition-[indent] duration-200"
           >Favorites</span
         >
-      </li>
-      <li
+      </a>
+      <a
+      href="./user-saves.html?filter=seeLater"
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i class="fa-regular fa-clock fa-lg w-[25.31px] text-center"></i>
         <span class="text-[24px] font-medium hidden aside-text"
           >See Later</span
         >
-      </li>
-      <li
+      </a>
+      <a
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i
@@ -141,16 +142,16 @@ asideDesktop.innerHTML = `
         <span class="text-[24px] font-medium hidden aside-text"
           >Trending</span
         >
-      </li>
-      <li
+      </a>
+      <a
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i class="fa-solid fa-star fa-lg w-[25.31px] text-center"></i>
         <span class="text-[24px] font-medium hidden aside-text"
           >Top Rated</span
         >
-      </li>
-    </ul>
+      </a>
+    </section>
     <section
       class="absolute bottom-0 bg-secondaryBtn h-auto w-full flex flex-col items-center gap-8 py-[20px]"
     >
