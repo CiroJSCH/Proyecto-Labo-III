@@ -1,7 +1,12 @@
+import { getUserById, logout } from './authUser.js';
+
 const asideTrigger = document.getElementById('aside-trigger');
 
 const asideMobile = document.getElementById('aside-mobile');
+
 const asideDesktop = document.getElementById('aside-desktop');
+
+const profileModal = document.getElementById('profile-modal');
 
 asideTrigger.classList.add(
   'lg:hidden',
@@ -69,11 +74,11 @@ asideMobile.innerHTML = `
     <section
       class="absolute bottom-0 left-0 h-[70px] bg-secondaryBtn w-full flex items-center justify-between px-3"
     >
-      <div class="flex items-center gap-2">
-        <div class="bg-red-500 w-[40px] h-[40px] rounded-full"></div>
-        <span class="text-[15px] text-gray-400">User</span>
-      </div>
-      <i class="fa-solid fa-arrow-right-from-bracket fa-lg text-text"></i>
+      <button class="flex items-center gap-2 userinfo">
+        <div class="w-[40px] h-[40px] rounded-full"></div>
+        <span class="text-[15px] text-gray-400 font-medium">User</span>
+      </button>
+      <i class="logout-button fa-solid fa-arrow-right-from-bracket fa-lg text-text"></i>
     </section>
   </div>
 `;
@@ -150,14 +155,14 @@ asideDesktop.innerHTML = `
       class="absolute bottom-0 bg-secondaryBtn h-auto w-full flex flex-col items-center gap-8 py-[20px]"
     >
       <button
-        class="flex items-center gap-0 w-full max-w-[150px] justify-center text-gray-400 hover:text-gray-200 transition-colors"
+        class="userinfo flex items-center gap-0 w-full max-w-[150px] justify-center text-gray-400 hover:text-gray-200 transition-colors"
         id="aside-profile"
       >
-        <div class="bg-red-500 w-[40px] h-[40px] rounded-full"></div>
+        <div class="w-[40px] h-[40px] rounded-full"></div>
         <p class="text-[20px] font-medium hidden">Username</p>
       </button>
       <button
-        class="flex items-center gap-0 w-full max-w-[150px] h-[30px] justify-center text-gray-400 hover:text-gray-200 transition-colors"
+        class="logout-button flex items-center gap-0 w-full max-w-[150px] h-[30px] justify-center text-gray-400 hover:text-gray-200 transition-colors"
         id="aside-logout"
       >
         <i
@@ -167,6 +172,36 @@ asideDesktop.innerHTML = `
       </button>
     </section>
   </div>
+`;
+
+profileModal.innerHTML = `
+<div class="flex w-full items-center justify-center h-screen">
+<div
+  class="bg-secondaryBtn w-[90%] max-w-[350px] h-[250px] py-5 flex flex-col items-center justify-around relative"
+>
+  <div class="relative w-[100px] h-[100px] group cursor-pointer">
+    <div
+      class="rounded-full w-full h-full"
+      id="modal-profile-pic"
+    ></div>
+    <div
+      class="bg-[rgba(0,0,0,0.55)] h-full w-full absolute top-0 opacity-0 group-hover:opacity-100 z-[70] rounded-full transition-opacity duration-200 ease-in-out grid place-content-center"
+    >
+      <i class="fa-regular fa-pen-to-square text-text text-[40px]"></i>
+    </div>
+  </div>
+  <span
+    class="font-title font-medium text-text text-[27px]"
+    id="modal-profile-name"
+    >Username</span
+  >
+  <span class="absolute top-2 right-2" id="close-modal-button">
+    <i
+      class="fa-regular fa-circle-xmark text-[30px] text-white cursor-pointer hover:text-red-400 transition-colors ease-in-out duration-200"
+    ></i>
+  </span>
+</div>
+</div>
 `;
 
 const asideTriggerDesktop = document.getElementById('aside-trigger-desktop');
@@ -228,4 +263,38 @@ asideTriggerDesktop.addEventListener('click', () => {
 
     asideLogout.children[1].classList.replace('block', 'hidden');
   }
+});
+
+getUserById(sessionStorage.getItem('userId')).then((user) => {
+  const profileButton = document.querySelectorAll('.userinfo');
+  profileButton.forEach((button) => {
+    button.addEventListener('click', () => {
+      profileModal.classList.replace('hidden', 'block');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    const profileButtonImg = button.firstElementChild;
+    const profileButtonName = button.lastElementChild;
+
+    profileButtonImg.style.backgroundImage = `url('${user.profilePicture}')`;
+    profileButtonName.innerHTML = user.username;
+  });
+  const modalProfilePicture = document.getElementById('modal-profile-pic');
+  const modalProfileName = document.getElementById('modal-profile-name');
+
+  modalProfilePicture.style.backgroundImage = `url('${user.profilePicture}')`;
+  modalProfileName.innerHTML = user.username;
+});
+
+const logoutButtons = document.querySelectorAll('.logout-button');
+logoutButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    logout();
+  });
+});
+
+const closeModalButton = document.getElementById('close-modal-button');
+closeModalButton.addEventListener('click', () => {
+  profileModal.classList.replace('block', 'hidden');
+  document.body.classList.remove('overflow-hidden');
 });

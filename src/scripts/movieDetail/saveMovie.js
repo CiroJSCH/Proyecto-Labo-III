@@ -7,7 +7,7 @@ import {
   onSnapshot,
   arrayRemove,
 } from 'firebase/firestore';
-import checkAuthState from '../common/authUser';
+import { checkAuthState } from '../common/authUser';
 import { db } from '../../firebase/main';
 import { errorNotification, successNotification } from '../../tostify/main';
 

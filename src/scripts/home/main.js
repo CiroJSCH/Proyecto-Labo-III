@@ -1,4 +1,4 @@
-import checkAuthState from '../common/authUser.js';
+import { checkAuthState } from '../common/authUser.js';
 
 checkAuthState((user) => {
   if (user) {
