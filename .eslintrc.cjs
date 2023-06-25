@@ -14,5 +14,7 @@ module.exports = {
     'import/extensions': 'off',
     'linebreak-style': 0,
     'operator-linebreak': 'off',
+    'object-curly-newline': 'off',
+    indent: 'off',
   },
 };
