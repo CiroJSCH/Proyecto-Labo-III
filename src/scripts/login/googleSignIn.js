@@ -1,5 +1,8 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { auth } from '../../firebase/main';
+import { getDoc, doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../firebase/main';
+import 'toastify-js/src/toastify.css';
+import { errorNotification } from '../../tostify/main';
 
 const provider = new GoogleAuthProvider();
 
@@ -8,9 +11,26 @@ const googleBtn = document.getElementById('googleBtn');
 googleBtn.addEventListener('click', async () => {
   try {
     const credentials = await signInWithPopup(auth, provider);
-    window.location.href = `${window.location.origin}/src/pages/home.html`;
+    const userID = credentials.user.uid;
+
+    const userSnapshot = await getDoc(doc(db, 'Users', userID));
+    if (!userSnapshot.exists()) {
+      // User not registered
+      const { user } = credentials;
+      const username = user.displayName;
+      const { email } = user;
+
+      await setDoc(doc(db, 'Users', user.uid), {
+        username,
+        email,
+        favorites: [],
+        seeLater: [],
+        profilePicture: user.photoURL,
+      });
+    }
+    sessionStorage.setItem('userId', userID);
+    window.location.href = `${window.location.origin}/src/pages/main.html`;
   } catch (error) {
-    // TODO: Reemplazar por tostify error indicando que algo salió mal
-    console.error(error);
+    errorNotification();
   }
 });
