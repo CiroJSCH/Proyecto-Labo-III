@@ -24,7 +24,26 @@
     <link rel="stylesheet" href="../styles/tailwind.css" />
   </head>
   <body>
-    <navbar id="mobile-navbar"></navbar>
+    <navbar
+      id=""
+      class="h-[70px] w-screen glassmorphism fixed bottom-0 z-[50] lg:hidden"
+    >
+      <div
+        class="px-[40px] w-full flex items-center justify-between max-w-[1580px] mx-auto"
+      >
+        <section class="flex flex-col items-center justify-center gap-5">
+          <h1 class="font-title text-text text-[30px] text-sm pl-2">
+            Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
+          </h1>
+        </section>
+        <section class="btn-container">
+          <button class="btn text-sm">
+            <a href="./login.html">Ingresar</a>
+          </button>
+        </section>
+      </div>
+    </navbar>
+
     <!-- Desktop navbar -->
     <navbar
       id=""

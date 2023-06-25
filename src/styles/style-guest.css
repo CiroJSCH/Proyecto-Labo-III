@@ -33,6 +33,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .btn {
   display: inline-block;
   width: 150px;
@@ -314,6 +315,13 @@ body {
   }
   .series-container {
     grid-template-columns: repeat(3, minmax(100px, auto));
+  }
+}
+
+@media (max-width: 404px) {
+  .btn {
+    width: 100px;
+    height: 45px;
   }
 }
 @media (max-width: 373px) {
