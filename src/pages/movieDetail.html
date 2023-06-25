@@ -15,8 +15,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
+    <meta name="referrer" content="no-referrer" />
   </head>
-  <body>
+  <body class="relative">
     <!-- Mobile navbar -->
     <navbar id="mobile-navbar"></navbar>
     <!-- Desktop navbar -->
@@ -167,9 +168,14 @@
         </section>
       </main>
     </div>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../scripts/movieDetail/saveMovie.js" type="module"></script>
-    <script src="../scripts/common/aside.js"></script>
+    <script src="../scripts/common/aside.js" type="module"></script>
     <script src="../scripts/common/navbar.js"></script>
     <script src="../scripts/movieDetail/main.js" type="module"></script>
   </body>
