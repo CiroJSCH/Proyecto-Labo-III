@@ -1,79 +1,90 @@
-const getPopularMovies = async () => {
+const traerPeliculas = async () => {
   const response = await fetch(
-    'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=1',
+    'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=2',
   );
   const data = await response.json();
   return data.results;
 };
 
-const updatePopularMovies = async () => {
-  try {
-    const movies = await getPopularMovies();
-    const peliculas = document.querySelectorAll('.peliculas-container .pelis');
+traerPeliculas().then((data) => {
+  const peliculasContainer = document.querySelector('.peliculas-container');
+  const peliculasSet = new Set(); // Conjunto para almacenar películas únicas
 
-    peliculas.forEach((pelicula, index) => {
-      const imagePath =
-        'https://image.tmdb.org/t/p/w342' + movies[index].backdrop_path;
-      const imgElement = pelicula.querySelector('.img-container img');
-      imgElement.src = imagePath;
-
-      const tituloElement = pelicula.querySelector('h3');
-      tituloElement.textContent = movies[index].title;
-    });
-  } catch (error) {
-    console.log('Error al obtener la lista de películas:', error);
+  while (peliculasSet.size < 15) {
+    const pelicula = data[Math.floor(Math.random() * data.length)];
+    peliculasSet.add(pelicula);
   }
-};
-updatePopularMovies();
 
-var TrandingSlider = new Swiper('.tranding-slider', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2.5,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  peliculasSet.forEach((pelicula) => {
+    const imagePath = `https://image.tmdb.org/t/p/w342${pelicula.poster_path}`;
+
+    const peliculaDiv = document.createElement('div');
+    peliculaDiv.classList.add('pelis');
+
+    const peliculaLink = document.createElement('a');
+    peliculaLink.href = 'login.html';
+    peliculaLink.target = '_blank';
+
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+
+    const imgElement = document.createElement('img');
+    imgElement.src = imagePath;
+    imgElement.alt = pelicula.title;
+    peliculaLink.appendChild(imgElement);
+
+    imgContainer.appendChild(peliculaLink);
+    peliculaDiv.appendChild(imgContainer);
+
+    const tituloElement = document.createElement('h3');
+    tituloElement.textContent = pelicula.title;
+    peliculaDiv.appendChild(tituloElement);
+
+    peliculasContainer.appendChild(peliculaDiv);
+  });
 });
 
-const movieSlider = document.getElementById('movieSlider');
-const apiUrl =
-  'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=1';
-fetch(apiUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    const movies = data.results;
-    movies.forEach((movie) => {
-      const slide = document.createElement('div');
-      slide.classList.add('swiper-slide');
-      const image = document.createElement('img');
-      image.src = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
-      image.alt = movie.title;
-      image.classList.add('movie-image');
-      const title = document.createElement('h3');
-      title.classList.add('movie-title');
-      title.textContent = movie.title;
-      slide.appendChild(image);
-      slide.appendChild(title);
-      movieSlider.appendChild(slide);
-    });
-    const swiper = new Swiper('.mySwiper', {});
-  })
-  .catch((error) => {
-    console.error('Error al obtener los datos de las películas:', error);
+const traerSeries = async () => {
+  const response = await fetch(
+    'https://api.themoviedb.org/3/tv/popular?api_key=7e166e717fba198f23734103f094beb2&page=1',
+  );
+  const data = await response.json();
+  return data.results;
+};
+
+traerSeries().then((data) => {
+  const seriesContainer = document.querySelector('.series-container');
+  const seriesSet = new Set(); // Conjunto para almacenar series únicas
+
+  while (seriesSet.size < 15) {
+    const serie = data[Math.floor(Math.random() * data.length)];
+    seriesSet.add(serie);
+  }
+
+  seriesSet.forEach((serie) => {
+    const imagePath = `https://image.tmdb.org/t/p/w342${serie.poster_path}`;
+
+    const serieDiv = document.createElement('div');
+    serieDiv.classList.add('serie');
+
+    const serieLink = document.createElement('a');
+    serieLink.href = 'login.html';
+    serieLink.target = '_blank';
+
+    const imgElement = document.createElement('img');
+    imgElement.src = imagePath;
+    imgElement.alt = serie.name;
+    serieLink.appendChild(imgElement);
+
+    const tituloElement = document.createElement('h3');
+    tituloElement.textContent = serie.name;
+    serieLink.appendChild(tituloElement);
+
+    serieDiv.appendChild(serieLink);
+
+    seriesContainer.appendChild(serieDiv);
   });
+});
 
 const tendenciaSlider = new Swiper('.tendencia-conteiner', {
   spaceBetween: 20,
@@ -132,174 +143,20 @@ const renderTrendingMovies = async () => {
     img.alt = movie.title;
     imgContainer.appendChild(img);
 
+    const linkElement = document.createElement('a');
+    linkElement.href = 'login.html';
+    linkElement.target = '_blank';
+
     const title = document.createElement('h3');
     title.textContent = movie.title;
 
-    slide.appendChild(imgContainer);
-    slide.appendChild(title);
-
+    linkElement.appendChild(imgContainer);
+    linkElement.appendChild(title);
+    slide.appendChild(linkElement);
     tendenciaContainer.appendChild(slide);
   });
 
   tendenciaSlider.update();
 };
+
 renderTrendingMovies();
-
-const llamarApi = async () => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=2`,
-  );
-  const data = await response.json();
-  return data.results;
-};
-
-llamarApi()
-  .then((data) => {
-    const peliculasContainer = document.querySelector('.peliculas-container');
-
-    for (let i = 0; i < 15; i++) {
-      const pelicula = data[Math.floor(Math.random() * data.length)];
-      const imagePath =
-        'https://image.tmdb.org/t/p/w342' + pelicula.poster_path;
-
-      const peliculaDiv = document.createElement('div');
-      peliculaDiv.classList.add('pelis');
-
-      const imgContainer = document.createElement('div');
-      imgContainer.classList.add('img-container');
-
-      const imgElement = document.createElement('img');
-      imgElement.src = imagePath;
-      imgElement.alt = pelicula.title;
-
-      imgContainer.appendChild(imgElement);
-      peliculaDiv.appendChild(imgContainer);
-
-      const tituloElement = document.createElement('h3');
-      tituloElement.textContent = pelicula.title;
-      peliculaDiv.appendChild(tituloElement);
-
-      peliculasContainer.appendChild(peliculaDiv);
-    }
-  })
-  .catch((error) => {
-    console.error('Error al obtener la lista de películas:', error);
-  });
-
-const llamarApi1 = async () => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=1`,
-  );
-  const data = await response.json();
-  return data.results;
-};
-llamarApi1()
-  .then((data) => {
-    const bannerContainer = document.querySelector('#banner .swiper-wrapper');
-
-    for (let i = 0; i < data.length; i++) {
-      const pelicula = data[i];
-      const imagePath =
-        'https://image.tmdb.org/t/p/w342' + pelicula.backdrop_path;
-
-      const swiperSlide = document.createElement('div');
-      swiperSlide.classList.add('swiper-slide', 'container');
-
-      const imgElement = document.createElement('img');
-      imgElement.src = imagePath;
-      imgElement.alt = 'banner';
-
-      const bannerText = document.createElement('div');
-      bannerText.classList.add('banner-text');
-
-      const tituloElement = document.createElement('h1');
-      tituloElement.textContent = pelicula.title;
-
-      const mirarAhoraLink = document.createElement('a');
-      mirarAhoraLink.href = '#';
-      mirarAhoraLink.classList.add('btn');
-      mirarAhoraLink.textContent = 'MIRAR AHORA';
-
-      const playLink = document.createElement('a');
-      playLink.href = '#';
-      playLink.classList.add('play');
-      const playIcon = document.createElement('i');
-      playIcon.classList.add('bx', 'bx-play-circle');
-      playLink.appendChild(playIcon);
-
-      bannerText.appendChild(tituloElement);
-      bannerText.appendChild(mirarAhoraLink);
-      bannerText.appendChild(playLink);
-
-      swiperSlide.appendChild(imgElement);
-      swiperSlide.appendChild(bannerText);
-
-      bannerContainer.appendChild(swiperSlide);
-    }
-
-    const bannerSwiper = new Swiper('#banner', {});
-  })
-  .catch((error) => {
-    console.error('Error al obtener la lista de películas:', error);
-  });
-
-const API_URL = 'https://api.themoviedb.org/3';
-const API_KEY = '7e166e717fba198f23734103f094beb2';
-const NUM_IMAGENES = 9;
-
-async function obtenerImagenes() {
-  try {
-    const response = await fetch(
-      `${API_URL}/trending/movie/day?api_key=${API_KEY}&language=en-US&page=1`,
-    );
-    const data = await response.json();
-
-    const imagenes = data.results.slice(0, NUM_IMAGENES).map((pelicula) => {
-      return {
-        url: `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`,
-        titulo: pelicula.title,
-      };
-    });
-
-    return imagenes;
-  } catch (error) {
-    console.error('Error al obtener las imágenes:', error);
-  }
-}
-
-async function generarElementosHTML() {
-  const imagenes = await obtenerImagenes();
-  const swiperWrapper = document.getElementById('swiperWrapper');
-
-  imagenes.forEach((imagen) => {
-    const swiperSlide = document.createElement('div');
-    swiperSlide.classList.add('swiper-slide');
-
-    const img = document.createElement('img');
-    img.src = imagen.url;
-
-    swiperSlide.appendChild(img);
-    swiperWrapper.appendChild(swiperSlide);
-  });
-  iniciarSwiper();
-}
-
-function iniciarSwiper() {
-  var swiper = new Swiper('.mySwiper', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  });
-}
-window.addEventListener('load', generarElementosHTML);
