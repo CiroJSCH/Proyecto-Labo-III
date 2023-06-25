@@ -69,7 +69,11 @@ registerForm.addEventListener('submit', async (e) => {
       email,
       favorites: [],
       seeLater: [],
+      profilePicture:
+        'https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg',
     });
+
+    window.location.href = `${window.location.origin}/src/pages/main.html`;
   } catch (error) {
     if (errors[error.code].includes('Email')) {
       emailContainer.classList.replace('border-l-accent', 'border-l-red-500');
