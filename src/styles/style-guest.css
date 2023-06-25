@@ -224,11 +224,10 @@ section {
 }
 
 
-
 #proximamente {
   padding: 0;
-}
 
+}
 #proximamente .tranding-slider {
   height: 52rem;
   padding: 2rem 0;
@@ -284,7 +283,6 @@ section {
   margin: 0 10px;
   font-size: 13px;
 }
-
 
 .tendencia-conteiner {
   display: grid;

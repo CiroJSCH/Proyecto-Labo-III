@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nombre de la pelicula</title>
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- Mobile navbar -->
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside id="aside-mobile"></aside>
+    <!-- Content Wrapper -->
+    <div
+      class="bg-backgroundGradient flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
+    >
+      <!-- Aside desktop -->
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex items-center w-full min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
+      >
+        <!-- Main container (acá hacen lo suyo) -->
+        <section
+          class="flex w-full flex-col lg:flex-row lg:justify-between lg:items-center"
+        >
+          <section class="lg:w-[40%] lg:max-w-[600px]">
+            <!-- Movie banner -->
+            <section
+              id="movie-banner"
+              class="bg-cover bg-center bg-no-repeat h-[300px] lg:h-[350px] lg:w-full relative"
+            >
+              <div
+                id="movie-poster"
+                class="bg-cover bg-center bg-no-repeat h-[200px] lg:h-[250px] w-[150px] lg:w-[180px] xl:w-[200px] absolute -bottom-[30%] left-[calc(50%-75px)] lg:left-[calc(50%-90px)] xl:left-[calc(50%-100px)] border-2 border-accent"
+              ></div>
+              <!-- Add Fav and See Later Mobile -->
+              <div
+                class="flex flex-col gap-2 absolute bottom-2 right-2 lg:hidden"
+              >
+                <button
+                  class="add-favorites border-red-500 border grid place-content-center bg-gray-800 text-red-500 rounded-full p-2 w-[38px] h-[38px] transition-colors duration-200 ease-in-out hover:bg-rose-100"
+                >
+                  <i class="fa-regular fa-heart fa-lg"></i>
+                </button>
+                <button
+                  class="add-see-later border-emerald-600 border grid place-content-center bg-gray-800 text-emerald-600 rounded-full p-2 w-[38px] h-[38px] transition-colors duration-200 ease-in-out hover:bg-emerald-100"
+                >
+                  <i class="fa-regular fa-clock fa-lg"></i>
+                </button>
+              </div>
+            </section>
+            <!-- General Info -->
+            <section class="mt-[95px] lg:mt-[125px] flex flex-col items-center">
+              <h1
+                id="movie-title"
+                class="text-text font-title text-center font-bold text-[30px]"
+              >
+                Título de la película
+              </h1>
+              <section class="mt-2 flex items-center gap-4">
+                <div class="flex items-center gap-2 text-gray-400">
+                  <i class="fa-solid fa-clock fa-lg"></i>
+                  <span class="text-[18px]" id="movie-runtime">2h 10min</span>
+                </div>
+                <span class="h-[20px] w-[2px] bg-gray-400"></span>
+                <div class="flex items-center gap-2 text-gray-400">
+                  <i class="fa-regular fa-calendar fa-lg"></i>
+                  <span class="text-[18px]" id="movie-release-date">2023</span>
+                </div>
+              </section>
+              <!-- Genres -->
+              <div
+                id="movie-genres"
+                class="flex overflow-x-scroll lg:overflow-x-auto mx-auto min-w-[250px] max-w-[400px] md:max-w-none items-center justify-between mt-5 gap-2"
+              ></div>
+              <!-- Stats -->
+              <section class="flex items-center justify-center gap-5 mt-5">
+                <!-- Rating -->
+                <div class="flex items-center gap-2">
+                  <i class="fa-regular fa-star fa-xl text-yellow-500"></i>
+                  <span class="text-white text-[22px]" id="movie-rating"
+                    >9.50</span
+                  >
+                </div>
+                <!-- Vote count -->
+                <div class="flex items-center gap-2">
+                  <i
+                    class="fa-solid fa-square-poll-vertical fa-xl text-emerald-500"
+                  ></i>
+                  <span class="text-white text-[22px]" id="movie-vote-count"
+                    >4256 votes</span
+                  >
+                </div>
+              </section>
+              <div class="mt-5 hidden lg:flex justify-between w-[350px]">
+                <button
+                  class="add-favorites border-red-500 border flex items-center justify-center gap-2 bg-gray-800 text-red-500 rounded-full p-2 w-[150px] h-auto transition-colors duration-200 ease-in-out hover:bg-rose-100"
+                >
+                  Favorites
+                  <i class="fa-regular fa-heart fa-lg"></i>
+                </button>
+                <button
+                  class="add-see-later border-emerald-600 border flex items-center justify-center gap-2 bg-gray-800 text-emerald-600 rounded-full p-2 w-[150px] h-auto transition-colors duration-200 ease-in-out hover:bg-emerald-100"
+                >
+                  See Later
+                  <i class="fa-regular fa-clock fa-lg"></i>
+                </button>
+              </div>
+            </section>
+          </section>
+
+          <section class="flex flex-col items-center px-2 lg:px-0">
+            <!-- Description -->
+            <div
+              class="flex flex-col mt-5 lg:mt-0 gap-3 px-2 w-full max-w-[450px] md:max-w-[500px]"
+            >
+              <h3
+                class="text-primaryBtn font-title font-medium text-[21px] lg:text-[24px]"
+              >
+                Synopsis
+              </h3>
+              <p
+                id="movie-overview"
+                class="text-text lg:text-[18px] leading-[27px] lg:leading-[30px] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                sequi assumenda nam! Aspernatur nesciunt quasi eveniet voluptate
+                ipsa ut repellat numquam possimus architecto dolor voluptas
+                minima, nostrum dolore reiciendis corporis.
+              </p>
+            </div>
+            <!-- Reviews -->
+            <section
+              class="flex flex-col mt-5 lg:mt-7 gap-3 px-2 w-full max-w-[450px] md:max-w-[500px] pb-5 lg:pb-0 relative"
+            >
+              <h3
+                class="text-primaryBtn font-title font-medium text-[21px] lg:text-[24px]"
+              >
+                Reviews
+              </h3>
+              <!-- Slider -->
+              <section id="slider-2">
+                <div class="container max-w-none wide">
+                  <div class="swiper" id="swiper-reviews">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../scripts/movieDetail/saveMovie.js" type="module"></script>
+    <script src="../scripts/common/aside.js"></script>
+    <script src="../scripts/common/navbar.js"></script>
+    <script src="../scripts/movieDetail/main.js" type="module"></script>
+  </body>
+</html>
