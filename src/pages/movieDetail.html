@@ -15,8 +15,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
+    <meta name="referrer" content="no-referrer" />
   </head>
-  <body>
+  <body class="relative">
     <!-- Mobile navbar -->
     <navbar id="mobile-navbar"></navbar>
     <!-- Desktop navbar -->
@@ -53,12 +54,12 @@
                 class="flex flex-col gap-2 absolute bottom-2 right-2 lg:hidden"
               >
                 <button
-                  class="border-red-500 border grid place-content-center bg-gray-800 text-red-500 rounded-full p-2 w-[38px] h-[38px]"
+                  class="add-favorites border-red-500 border grid place-content-center bg-gray-800 text-red-500 rounded-full p-2 w-[38px] h-[38px] transition-colors duration-200 ease-in-out hover:bg-rose-100"
                 >
                   <i class="fa-regular fa-heart fa-lg"></i>
                 </button>
                 <button
-                  class="border-emerald-600 border grid place-content-center bg-gray-800 text-emerald-600 rounded-full p-2 w-[38px] h-[38px]"
+                  class="add-see-later border-emerald-600 border grid place-content-center bg-gray-800 text-emerald-600 rounded-full p-2 w-[38px] h-[38px] transition-colors duration-200 ease-in-out hover:bg-emerald-100"
                 >
                   <i class="fa-regular fa-clock fa-lg"></i>
                 </button>
@@ -109,13 +110,13 @@
               </section>
               <div class="mt-5 hidden lg:flex justify-between w-[350px]">
                 <button
-                  class="border-red-500 border flex items-center justify-center gap-2 bg-gray-800 text-red-500 rounded-full p-2 w-[150px] h-auto"
+                  class="add-favorites border-red-500 border flex items-center justify-center gap-2 bg-gray-800 text-red-500 rounded-full p-2 w-[150px] h-auto transition-colors duration-200 ease-in-out hover:bg-rose-100"
                 >
                   Favorites
                   <i class="fa-regular fa-heart fa-lg"></i>
                 </button>
                 <button
-                  class="border-emerald-600 border flex items-center justify-center gap-2 bg-gray-800 text-emerald-600 rounded-full p-2 w-[150px] h-auto"
+                  class="add-see-later border-emerald-600 border flex items-center justify-center gap-2 bg-gray-800 text-emerald-600 rounded-full p-2 w-[150px] h-auto transition-colors duration-200 ease-in-out hover:bg-emerald-100"
                 >
                   See Later
                   <i class="fa-regular fa-clock fa-lg"></i>
@@ -167,8 +168,14 @@
         </section>
       </main>
     </div>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="../scripts/common/aside.js"></script>
+    <script src="../scripts/movieDetail/saveMovie.js" type="module"></script>
+    <script src="../scripts/common/aside.js" type="module"></script>
     <script src="../scripts/common/navbar.js"></script>
     <script src="../scripts/movieDetail/main.js" type="module"></script>
   </body>

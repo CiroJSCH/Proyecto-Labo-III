@@ -1,10 +1,9 @@
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../firebase/main.js';
+import { checkAuthState } from '../common/authUser.js';
 
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    window.location.href = `${window.location.origin}/src/pages/login.html`;
+checkAuthState((user) => {
+  if (user) {
+    console.log('Usuario autenticado:', user);
   } else {
-    console.log(auth.currentUser);
+    console.log('Ningún usuario autenticado');
   }
 });
