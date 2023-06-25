@@ -17,8 +17,8 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 90%;
-  height: 80%;
+  width: 80%;
+  height: 70%;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
@@ -37,6 +37,8 @@ body{
 
   height: 300px;
   width: 300px;
+  user-select: none;
+  margin-left: 18%;
   border-radius: 50%;
   object-fit:cover;
   object-position: center;
@@ -100,7 +102,7 @@ body{
 }
 
 .projects{
-  margin-top: 15%;
+  margin-top: 8%;
   text-align: center;
   user-select: none;
 }
@@ -109,46 +111,6 @@ body{
   margin-top: 40px;
   user-select: none;
 
-}
-
-.data{
-   text-align: center;
-}
-
-
-/* CAROUSEL STYLES */
-
-.wrapper{
-  display: flex;
-  max-width: 1200px;
-  position: relative;
-}
-
-.wrapper .carousel{
-  font-size: 0px;
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-}
-.carousel.dragging{
-  cursor: grab;
-  scroll-behavior: auto;
-}
-.carousel.dragging img{
-  pointer-events: none;
-  user-select: none;
-}
-.carousel img{
-  height: 200px;
-  object-fit: cover;
-  user-select: none;
-  margin-left: 14px;
-  width: calc(100% / 8);
-  border-radius: 10%;
-}
-.carousel img:first-child{
-  margin-left: 0px;
 }
 
 /* SWIPER STYLES */
@@ -176,32 +138,23 @@ body{
 
 /* MEDIA SCREEN EVENTS */
 
-@media screen and (max-width: 1060px) {
-  .user .left img{
+@media screen and (max-width: 1497px) {
 
+  .user .left img{
     height: 230px;
     width: 230px;
-    border-radius: 50%;
-    object-fit:cover;
-    object-position: center;
-  
   }
 }
-@media screen and (max-width: 900px) {
-  .carousel img{
-    width: calc(100% / 4);
-  }
+@media screen and (max-width: 1250px) {
   .user .left img{
 
     height: 200px;
     width: 200px;
-    border-radius: 50%;
-    object-fit:cover;
-    object-position: center;
+    
   
   }
 }
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 1089px) {
   .user .left img{
 
     height: 150px;
@@ -210,9 +163,10 @@ body{
     object-fit:cover;
     object-position: center;
   
+  
   }
 }
-@media screen and (max-width: 614px) {
+@media screen and (max-width: 830px) {
   .user .left img{
 
     height: 120px;
@@ -223,14 +177,28 @@ body{
   
   }
 }
-@media screen and (max-width: 550px) {
-  .carousel img{
-    width: calc(100% / 3);
+@media screen and (max-width: 630px) {
+  .swiper {
+    width: 50%;
+    height: 50%;
   }
   .user .left img{
 
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .user .left img{
+
+    height: 65px;
+    width: 65px;
     border-radius: 50%;
     object-fit:cover;
     object-position: center;
@@ -241,10 +209,11 @@ body{
 
   .user{
     position: absolute;
-    width: 90%;
+    width: 70%;
     height: 90%;
     box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     border-radius: 3%;
   }
   
@@ -260,6 +229,7 @@ body{
   
     height: 150px;
     width: 150px;
+    margin-left: 24%;
     border-radius: 50%;
     object-fit:cover;
     object-position: center;
@@ -272,18 +242,13 @@ body{
     background: #fff;
   }
 
-  .carousel img{
-    height: 120px;
-    margin-left: 14px;
-    width: calc(100% / 4);
-  }
   
   .projects{
     margin-top: 5%;
     text-align: center;
     user-select: none;
     height: 40%;
-    width: 90%;
+    width: 100%;
   }
   .info{
     text-align: center;
@@ -296,8 +261,9 @@ body{
   }
 
   .swiper {
-    width: 10%;
-    height: 10%;
+    width: 60%;
+    height: 50%;
+
   }
   
   .swiper-slide {
@@ -319,30 +285,42 @@ body{
   
 }
 @media screen and (max-width: 400px) {
-  .carousel img{
-    width: calc(100% / 3);
-  }
+
   .user .left img{
 
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
+    margin-left: 17%;
     object-fit:cover;
     object-position: center;
   
   }
 }
 @media screen and (max-width: 350px) {
-  .carousel img{
-    width: calc(100% / 2);
-  }
   .user .left img{
 
-    height: 80px;
-    width: 80px;
+    height: 140px;
+    width: 140px;
+    margin-left: 13%;
     border-radius: 50%;
     object-fit:cover;
     object-position: center;
   
+  }
+}
+@media screen and (max-width: 300px) {
+  .user .left img{
+
+    height: 160px;
+    width: 160px;
+    margin-left: 0%;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: center;
+  
+  }
+  h1{
+    font-size: 20px;
   }
 }
