@@ -1,6 +1,6 @@
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { db, auth } from '../../firebase/main.js';
+import { db, auth } from '../../firebase/index.js';
 
 export const checkAuthState = (callback) => {
   onAuthStateChanged(auth, (user) => {
