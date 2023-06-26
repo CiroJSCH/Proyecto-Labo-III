@@ -1,8 +1,8 @@
 import { doc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { getUserById, logout } from '@scripts/common/authUser.js';
-import { db, storage } from '@/firebase/main.js';
-import { successNotification, errorNotification } from '@/tostify/main.js';
+import { getUserById, logout } from './authUser.js';
+import { db, storage } from '../../firebase/main.js';
+import { successNotification, errorNotification } from '../../tostify/main.js';
 
 const asideTrigger = document.getElementById('aside-trigger');
 

@@ -24,10 +24,10 @@ export default defineConfig({
       // },
     },
   },
-  resolve: {
-    alias: [
-      { find: '@', replacement: resolve(__dirname, 'src') },
-      { find: '@scripts', replacement: resolve(__dirname, 'src/scripts') },
-    ],
-  },
+  // resolve: {
+  //   alias: [
+  //     { find: '@', replacement: resolve(__dirname, 'src') },
+  //     { find: '@scripts', replacement: resolve(__dirname, 'src/scripts') },
+  //   ],
+  // },
 });
