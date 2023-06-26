@@ -1,6 +1,6 @@
-import { getUserById, logout } from './authUser.js';
 import { doc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { getUserById, logout } from './authUser.js';
 import { db, storage } from '../../firebase/main.js';
 import { successNotification, errorNotification } from '../../tostify/main.js';
 
@@ -65,14 +65,14 @@ asideMobile.innerHTML = `
           <i class="fa-regular fa-clock fa-lg"></i>
           <span class="font-semibold">See Later</span>
         </a>
-        <li class="flex items-center justify-between w-[80%] gap-2">
+        <a href="./see-more-movies.html?filter=popular" class="flex items-center justify-between w-[80%] gap-2">
           <i class="fa-solid fa-fire fa-lg"></i>
           <span class="font-semibold">Trending</span>
-        </li>
-        <li class="flex items-center justify-between w-[80%] gap-2">
+        </a>
+        <a href="./see-more-movies.html?filter=top_rated" class="flex items-center justify-between w-[80%] gap-2">
           <i class="fa-solid fa-star"></i>
           <span class="font-semibold">Top Rated</span>
-        </li>
+        </a>
       </section>
     </section>
     <section
@@ -138,6 +138,7 @@ asideDesktop.innerHTML = `
         >
       </a>
       <a
+        href="./see-more-movies.html?filter=popular"
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i
@@ -148,6 +149,7 @@ asideDesktop.innerHTML = `
         >
       </a>
       <a
+        href="./see-more-movies.html?filter=top_rated" 
         class="flex items-center gap-0 h-[36px] w-full justify-between hover:text-primaryBtn transition-colors cursor-pointer"
       >
         <i class="fa-solid fa-star fa-lg w-[25.31px] text-center"></i>

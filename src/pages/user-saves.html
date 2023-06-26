@@ -37,8 +37,46 @@
       >
         <section
           id="movies-container"
-          class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-[100px] lg:mt-0 min-h-[500px]"
+          class="hidden grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-[100px] lg:mt-0 min-h-[500px]"
         ></section>
+        <div
+          id="no-favorites"
+          class="hidden flex-col items-center justify-center gap-2 mx-auto w-full px-2 max-w-[500px]"
+        >
+          <img
+            src="../images/heart.png"
+            class="w-full"
+            alt="heart illustration"
+          />
+          <div class="text-center">
+            <h4 class="text-text font-title text-[21px] mt-2">
+              You don't have any favorites movies
+            </h4>
+            <p class="text-[18px] text-gray-400 mt-2">
+              You can add movies to favorites by touching the Favorites button
+              that is in the detail of each movie
+            </p>
+          </div>
+        </div>
+        <div
+          id="no-seelater"
+          class="hidden flex-col items-center justify-center gap-2 mx-auto w-full px-2 max-w-[500px]"
+        >
+          <img
+            src="../images/clock.png"
+            class="w-[350px]"
+            alt="heart illustration"
+          />
+          <div class="max-w-[500px] text-center">
+            <h4 class="text-text font-title text-[21px] mt-2">
+              You don't have any movies to see later
+            </h4>
+            <p class="text-[18px] text-gray-400 mt-2">
+              You can add movies to see later by touching the See Later button
+              that is in the detail of each movie
+            </p>
+          </div>
+        </div>
       </main>
     </div>
     <!-- Profile modal -->
