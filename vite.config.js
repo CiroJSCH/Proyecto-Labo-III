@@ -20,7 +20,7 @@ export default defineConfig({
       output: {
         strict: false,
         entryFileNames: '[name].js',
-        dir: 'dist/assets/',
+        dir: 'dist/',
       },
     },
   },
