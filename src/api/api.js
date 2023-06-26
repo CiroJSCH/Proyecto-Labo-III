@@ -1,4 +1,4 @@
-const { VITE_API_KEY: key, VITE_API_TOKEN: token } = import.meta.env;
+const { VITE_API_KEY: key } = import.meta.env;
 
 export const getMovies = async (pageNumber = 1) => {
   const results = await fetch(
