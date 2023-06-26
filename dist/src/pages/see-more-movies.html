@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    
+    
+    
+    <script
+      src="https://kit.fontawesome.com/b223d2f563.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script type="module" crossorigin src="../assets/seeMoreMovies-70dbe667.js"></script>
+    <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="modulepreload" crossorigin href="../assets/index-05d1972f.js">
+    <link rel="modulepreload" crossorigin href="../assets/navbar-29c04306.js">
+    <link rel="modulepreload" crossorigin href="../assets/main-1d615fee.js">
+    <link rel="modulepreload" crossorigin href="../assets/api-879b6fb8.js">
+    <link rel="modulepreload" crossorigin href="../assets/aside-b25af0c7.js">
+    <link rel="stylesheet" href="../assets/index-c2e09823.css">
+    <link rel="stylesheet" href="../assets/navbar-4213569e.css">
+    <link rel="stylesheet" href="../assets/main-a461d729.css">
+    <link rel="stylesheet" href="../assets/series-af8b0dc3.css">
+    <link rel="stylesheet" href="../assets/tailwind-87b03d20.css">
+  </head>
+  <body>
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside type="module" id="aside-mobile"></aside>
+    <!-- Aside desktop -->
+    <div
+      class="bg-backgroundGradient flex flex-col justify-between w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
+    >
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex flex-col w-full min-h-screen lg:min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
+      >
+        <div class="titulos">
+          <h1 class="text-white text-3xl text-center mt-10 font-title">
+            Movies
+          </h1>
+        </div>
+        <br />
+        <section
+          id="movies-container"
+          class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-auto lg:mt-0 min-h-[500px]"
+        ></section>
+        <div
+          id="pagination-container"
+          class="flex  mb-4 text-white justify-center gap-10"
+        >
+          <button id="prev-button" class="pagination-button" disabled>
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <button id="next-button" class="pagination-button">
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+    </div>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </body>
+</html>

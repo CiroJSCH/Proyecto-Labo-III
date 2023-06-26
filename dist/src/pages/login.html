@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineHub | Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      type="module"
+      crossorigin
+      src="..../assets/login-79eb3716.js"
+    ></script>
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="..../assets/modulepreload-polyfill-3cfb730f.js"
+    />
+    <link rel="modulepreload" crossorigin href="..../assets/main-1d615fee.js" />
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="..../assets/errors-7c5232a2.js"
+    />
+    <link rel="stylesheet" href="..../assets/main-a461d729.css" />
+    <link rel="stylesheet" href="..../assets/tailwind-87b03d20.css" />
+  </head>
+  <body class="min-h-screen bg-background">
+    <main
+      class="flex flex-col md:flex-row items-center md:items-start w-full min-h-screen"
+    >
+      <section
+        class="w-full md:w-[60%] h-[220px] md:min-h-[700px] md:h-screen bg-[url('../images/login.jpg')] bg-cover bg-bottom bg-no-repeat relative"
+      >
+        <div
+          class="bg-[rgba(0,0,0,0.77)] h-full w-full absolute top-0 text-center md:text-start"
+        >
+          <div class="md:hidden flex flex-col gap-4 justify-center h-full">
+            <h1 class="font-title text-text text-[30px]">
+              Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
+            </h1>
+            <p class="text-text text-[20px] font-semibold">
+              Your favorite movies in one place
+            </p>
+          </div>
+          <div
+            class="hidden md:flex h-[85%] w-full xl:max-w-[850px] flex-col justify-center gap-4"
+          >
+            <div
+              class="flex flex-col items-start gap-2 px-5 lg:px-[40px] xl:px-[50px]"
+            >
+              <h1
+                class="font-text text-[42px] lg:text-[48px] text-text uppercase"
+              >
+                Welcome back to <br />
+              </h1>
+              <p
+                class="font-title text-text text-[40px] lg:text-[46px] select-none"
+              >
+                Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
+              </p>
+            </div>
+            <div class="px-5 lg:px-[40px] xl:px-[50px]">
+              <h2 class="mt-3 text-text font-text text-[30px] lg:text-[34px]">
+                Your favorite movies in one place
+              </h2>
+              <p
+                class="mt-8 font-text text-[20px] max-w-[] lg:text-[21px] text-gray-400 leading-10 hidden xl:block"
+              >
+                Dive into a curated collection of cinematic wonders. From
+                Hollywood blockbusters to international masterpieces, we have
+                the perfect movie for your every mood. Embark on a cinematic
+                journey with CinemaHUB!
+              </p>
+            </div>
+            <div
+              class="absolute bottom-0 hidden md:flex bg-accent h-[100px] w-full items-center justify-between px-3 lg:px-[35px]"
+            >
+              <p
+                class="text-text font-title uppercase text-[20px] lg:text-[24px]"
+              >
+                Follow Us!
+              </p>
+              <ul class="flex items-center gap-3 lg:gap-5">
+                <li
+                  class="cursor-pointer hover:bg-black hover:text-text rounded-full p-2 bg-white transition-colors duration-300 ease-in-out"
+                >
+                  <i class="fa-brands fa-instagram fa-xl"></i>
+                </li>
+                <li
+                  class="cursor-pointer hover:bg-black hover:text-text rounded-full p-2 bg-white transition-colors duration-300 ease-in-out"
+                >
+                  <i class="fa-brands fa-facebook fa-xl"></i>
+                </li>
+                <li
+                  class="cursor-pointer hover:bg-black hover:text-text rounded-full p-2 bg-white transition-colors duration-300 ease-in-out"
+                >
+                  <i class="fa-brands fa-youtube fa-xl"></i>
+                </li>
+                <li
+                  class="cursor-pointer hover:bg-black hover:text-text rounded-full p-2 bg-white transition-colors duration-300 ease-in-out"
+                >
+                  <i class="fa-brands fa-twitch fa-xl"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="min-h-[calc(100vh-220px)] md:min-h-[700px] md:h-screen w-full md:w-[40%] bg-secondaryBtn flex items-center justify-center"
+      >
+        <div
+          class="text-text text-center bg-secondaryBtn rounded-md drop-shadow-md py-5 h-full w-full max-w-[400px] flex flex-col justify-center"
+        >
+          <h3
+            class="font-title uppercase text-primaryBtn text-[28px] lg:text-[32px]"
+          >
+            Login
+          </h3>
+          <p class="font-text sm:text-[18px] lg:text-[20px] mt-2 px-1">
+            Get access to your account
+          </p>
+          <form class="w-[90%] mx-auto mt-5 flex flex-col" id="signInForm">
+            <div
+              id="emailContainer"
+              class="border-l-8 border-l-accent bg-white rounded-md flex items-center p-3 transition-colors duration-200"
+            >
+              <input
+                id="email"
+                class="w-full text-black focus:outline-none"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div
+              id="passwordContainer"
+              class="border-l-8 border-l-accent bg-white rounded-md flex items-center justify-between p-3 mt-5 transition-colors duration-200"
+            >
+              <input
+                id="password"
+                class="w-[80%] text-black focus:outline-none"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+              <span id="password-toggle" class="cursor-pointer">
+                <i class="fa-solid fa-eye fa-lg text-black"></i>
+              </span>
+            </div>
+            <span class="text-rose-500 mt-2 h-[18px]" id="loginError"></span>
+            <button
+              id="signInBtn"
+              type="submit"
+              class="bg-accent text-text font-title uppercase text-[20px] py-2 rounded-md mt-5 hover:bg-primaryBtn transition-colors duration-300 ease-in-out"
+            >
+              Sign In
+            </button>
+          </form>
+          <div class="flex items-center justify-center gap-1 mt-7">
+            <span class="w-[40%] bg-slate-400 h-[2px]"></span>
+            <p>OR</p>
+            <span class="w-[40%] bg-slate-400 h-[2px]"></span>
+          </div>
+          <div class="flex flex-col w-[90%] mx-auto mt-7 gap-5">
+            <button
+              id="githubBtn"
+              class="rounded-md flex items-center bg-[#25282D] hover:bg-[#303339] transition-colors duration-300 ease-in-out p-2 font-text gap-3 relative"
+            >
+              <i class="fa-brands fa-github text-[28px] absolute left-3"></i>
+              <p class="w-full text-[18px] text-center">Sign in with GitHub</p>
+            </button>
+            <button
+              id="googleBtn"
+              class="rounded-md flex items-center bg-white hover:opacity-90 transition-opacity duration-300 ease-in-out p-2 font-text gap-3 relative text-black"
+            >
+              <img
+                src="data:image/png;base64,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"
+                class="absolute left-3 w-[28px]"
+                alt="google logo"
+              />
+              <p class="w-full text-[18px] text-center">Sign in with Google</p>
+            </button>
+          </div>
+          <div class="text-[17px] flex items-center gap-1 justify-center mt-5">
+            <p>Don't have an account?</p>
+            <a href="./register.html" class="underline">Sign Up</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
