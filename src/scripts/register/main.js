@@ -73,6 +73,7 @@ registerForm.addEventListener('submit', async (e) => {
         'https://t4.ftcdn.net/jpg/04/08/24/43/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ.jpg',
     });
 
+    sessionStorage.setItem('userId', auth.currentUser.uid);
     window.location.href = `${window.location.origin}/src/pages/main.html`;
   } catch (error) {
     if (errors[error.code].includes('Email')) {
