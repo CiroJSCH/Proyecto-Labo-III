@@ -19,4 +19,10 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src/'),
+      '@scripts': resolve(__dirname, 'src/scripts'),
+    },
+  },
 });
