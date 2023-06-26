@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../../firebase/main';
+import { auth, db } from '../../firebase/index.js';
 import { errorNotification } from '../../tostify/main';
 
 const provider = new GoogleAuthProvider();
