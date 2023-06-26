@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎬CineHub | Series</title>
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link rel="stylesheet" href="../styles/series.css" />
+    <script
+      src="https://kit.fontawesome.com/b223d2f563.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside id="aside-mobile"></aside>
+
+    <!-- Aside desktop -->
+    <div
+      class="bg-backgroundGradient flex flex-col justify-between w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
+    >
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex flex-col w-full min-h-screen lg:min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
+      >
+        <div class="titulos">
+          <h1 class="text-white text-3xl text-center mt-10 font-title">
+            Series
+          </h1>
+        </div>
+        <br />
+        <section
+          id="series-container"
+          class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-auto lg:mt-0 min-h-[500px]"
+        ></section>
+        <div
+          id="pagination-container"
+          class="flex justify-center mb-4 text-white justify-center gap-10"
+        >
+          <button id="prev-button" class="pagination-button" disabled>
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <button id="next-button" class="pagination-button">
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
+    <script
+      src="https://kit.fontawesome.com/b223d2f563.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../scripts/script-series/series.js"></script>
+    <script type="module" src="../scripts/common/aside.js"></script>
+    <script type="module" src="../scripts/common/navbar.js"></script>
+  </body>
+</html>
