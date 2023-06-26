@@ -1,10 +1,10 @@
+import { checkAuthState } from '@scripts/common/authUser.js';
 import {
   getMovies,
   getPopularSeries,
   getTopRatedMovies,
   getUpcomingMovies,
-} from '../../api/api';
-import { checkAuthState } from '../common/authUser';
+} from '@/api/api.js';
 
 checkAuthState((user) => {
   if (!user) {
