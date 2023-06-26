@@ -52,6 +52,16 @@ export const getSeriesDetails = async (serieId) => {
   return response.json();
 };
 
+export const getAnyMovies = async (
+  classification = 'popular',
+  pageNumber = 1,
+) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/movie/${classification}?api_key=${key}&page=${pageNumber}`,
+  );
+  const data = await results.json();
+  return data;
+};
 export const getSeriesReviews = async (id) => {
   const results = await fetch(
     `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${key}`,
