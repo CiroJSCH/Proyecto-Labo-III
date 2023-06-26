@@ -35,10 +35,26 @@ export const getSeriesGenres = async () => {
   const data = await results.json();
   return data;
 };
-
 export const getPopularSeries = async (pageNumber = 1) => {
   const results = await fetch(
     `https://api.themoviedb.org/3/tv/popular?api_key=${key}&page=${pageNumber}`,
+  );
+  const data = await results.json();
+  return data;
+};
+
+export const getSeriesDetails = async (serieId) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/${serieId}?api_key=${
+      import.meta.env.VITE_API_KEY
+    }`,
+  );
+  return response.json();
+};
+
+export const getSeriesReviews = async (id) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${key}`,
   );
   const data = await results.json();
   return data;
