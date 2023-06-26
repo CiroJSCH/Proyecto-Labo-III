@@ -1,6 +1,10 @@
+import { getMoviesOrSeriesSbyTitle } from '../../api/api.js';
+
 const mobileNavbar = document.getElementById('mobile-navbar');
 const desktopNavbar = document.getElementById('desktop-navbar');
-
+const desktopSearch = document.querySelector('#desktop-search-bar');
+const searchBar = document.getElementById('search-bar');
+const searchButton = document.getElementById('');
 mobileNavbar.classList.add(
   'h-[70px]',
   'w-screen',
@@ -73,16 +77,16 @@ desktopNavbar.innerHTML = `
         </li>
       </ul>
     </section>
-    <form>
+    <form id="desktop-search-bar">
       <div
         class="bg-white flex items-center justify-between rounded-2xl overflow-hidden"
       >
-        <input
+        <input id="search-bar"
           type="text"
           class="p-2 text-black focus:outline-none"
           placeholder="Search something..."
         />
-        <button
+        <button  id="search-button"
           class="bg-primaryBtn hover:bg-blue-600 transition-colors duration-200 p-3"
           type="submit"
         >
@@ -92,3 +96,12 @@ desktopNavbar.innerHTML = `
     </form>
   </div>
 `;
+
+getMoviesOrSeriesSbyTitle('Titanic').then((data) => {
+  console.log(data);
+});
+
+desktopSearch.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log(searchBar.value);
+});

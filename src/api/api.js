@@ -54,3 +54,11 @@ export const getAnyMovies = async (
   const data = await results.json();
   return data;
 };
+
+export const getMoviesOrSeriesSbyTitle = async (title) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${title}`,
+  );
+  const data = await results.json();
+  return data;
+};
