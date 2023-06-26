@@ -43,3 +43,14 @@ export const getPopularSeries = async (pageNumber = 1) => {
   const data = await results.json();
   return data;
 };
+
+export const getAnyMovies = async (
+  classification = 'popular',
+  pageNumber = 1,
+) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/movie/${classification}?api_key=${key}&page=${pageNumber}`,
+  );
+  const data = await results.json();
+  return data;
+};
