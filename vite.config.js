@@ -4,19 +4,18 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
-    assetsDir: 'src/assets/',
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html'),
-        login: resolve(__dirname, 'src/pages/login.html'),
-        register: resolve(__dirname, 'src/pages/register.html'),
-        main: resolve(__dirname, 'src/pages/main.html'),
-        series: resolve(__dirname, 'src/pages/series.html'),
-        vistaGuest: resolve(__dirname, 'src/pages/vista-guest.html'),
-        seeMoreMovies: resolve(__dirname, 'src/pages/see-more-movies.html'),
-        movieDetail: resolve(__dirname, 'src/pages/movieDetail.html'),
-        userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
-        verMas: resolve(__dirname, 'src/pages/ver-mas.html'),
+        index: resolve('index.html'),
+        login: resolve('src/', 'pages/login.html'),
+        register: resolve('src/', 'pages/register.html'),
+        main: resolve('src/', 'pages/main.html'),
+        series: resolve('src/', 'pages/series.html'),
+        vistaGuest: resolve('src/', 'pages/vista-guest.html'),
+        seeMoreMovies: resolve('src/', 'pages/see-more-movies.html'),
+        movieDetail: resolve('src/', 'pages/movieDetail.html'),
+        userSaves: resolve('src/', 'pages/user-saves.html'),
+        verMas: resolve('src/', 'pages/ver-mas.html'),
       },
     },
   },
