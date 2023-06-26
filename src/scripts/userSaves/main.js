@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import { doc, updateDoc, arrayRemove } from 'firebase/firestore';
-import { getMovieDetail } from '../../api/getMovie';
-import { db } from '../../firebase/main';
-import { errorNotification, successNotification } from '../../tostify/main';
-import { checkAuthState, getUserById } from '../common/authUser';
+import { getMovieDetail } from '../../api/getMovie.js';
+import { db } from '../../firebase/main.js';
+import { errorNotification, successNotification } from '../../tostify/main.js';
+import { checkAuthState, getUserById } from '../common/authUser.js';
 
 checkAuthState((user) => {
   if (!user) {

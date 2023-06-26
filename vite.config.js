@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { fileURLToPath, URL } from 'node:url';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig } from 'vite';
 
@@ -19,10 +20,9 @@ export default defineConfig({
       },
     },
   },
-  // resolve: {
-  //   alias: {
-  //     '@': resolve(__dirname, 'src'),
-  //     '@scripts': resolve(__dirname, 'src/scripts'),
-  //   },
-  // },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 });
