@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nombre de la pelicula</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <script
+      type="module"
+      crossorigin
+      src="../assets/userSaves-d57245b7.js"
+    ></script>
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="../assets/modulepreload-polyfill-3cfb730f.js"
+    />
+    <link rel="modulepreload" crossorigin href="../assets/navbar-29c04306.js" />
+    <link rel="modulepreload" crossorigin href="../assets/main-1d615fee.js" />
+    <link rel="modulepreload" crossorigin href="../assets/aside-b25af0c7.js" />
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="../assets/getMovie-d963b739.js"
+    />
+    <link rel="stylesheet" href="../assets/navbar-4213569e.css" />
+    <link rel="stylesheet" href="../assets/main-a461d729.css" />
+    <link rel="stylesheet" href="../assets/tailwind-87b03d20.css" />
+  </head>
+  <body class="relative">
+    <!-- Mobile navbar -->
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside id="aside-mobile"></aside>
+    <!-- Content Wrapper -->
+    <div
+      class="bg-backgroundGradient flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
+    >
+      <!-- Aside desktop -->
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex w-full min-h-screen lg:min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
+      >
+        <section
+          id="movies-container"
+          class="hidden grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-[100px] lg:mt-0 min-h-[500px]"
+        ></section>
+        <div
+          id="no-favorites"
+          class="hidden flex-col items-center justify-center gap-2 mx-auto w-full px-2 max-w-[500px]"
+        >
+          <img
+            src="../assets/heart-68d921bc.png"
+            class="w-full"
+            alt="heart illustration"
+          />
+          <div class="text-center">
+            <h4 class="text-text font-title text-[21px] mt-2">
+              You don't have any favorites movies
+            </h4>
+            <p class="text-[18px] text-gray-400 mt-2">
+              You can add movies to favorites by touching the Favorites button
+              that is in the detail of each movie
+            </p>
+          </div>
+        </div>
+        <div
+          id="no-seelater"
+          class="hidden flex-col items-center justify-center gap-2 mx-auto w-full px-2 max-w-[500px]"
+        >
+          <img
+            src="../assets/clock-d2863940.png"
+            class="w-[350px]"
+            alt="heart illustration"
+          />
+          <div class="max-w-[500px] text-center">
+            <h4 class="text-text font-title text-[21px] mt-2">
+              You don't have any movies to see later
+            </h4>
+            <p class="text-[18px] text-gray-400 mt-2">
+              You can add movies to see later by touching the See Later button
+              that is in the detail of each movie
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </body>
+</html>

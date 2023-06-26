@@ -1,0 +1,6 @@
+import"./modulepreload-polyfill-3cfb730f.js";import"./index-05d1972f.js";/* empty css             *//* empty css                 */import"./navbar-29c04306.js";import{b as c}from"./api-879b6fb8.js";import{c as g}from"./aside-b25af0c7.js";import"./main-1d615fee.js";g(e=>{e||(window.location.href="./login.html")});const s=document.querySelector("#series-container"),l=document.querySelector("#prev-button"),p=document.querySelector("#next-button");let t=1;const d=15;c(t).then(e=>{const{results:o}=e;o.forEach(n=>{a(n)}),i()});const a=e=>{const{name:o,poster_path:n,id:m}=e,r=document.createElement("div");r.classList.add("w-full","h-[300px]","bg-center","bg-cover","bg-no-repeat"),r.style.backgroundImage=`url('https://image.tmdb.org/t/p/w500/${n}')`;const u=`
+    <a href="movieDetail.html?movieId=${m}" class="relative col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 w-full flex flex-col gap-2 cursor-pointer">
+      ${r.outerHTML}
+      <p class="text-text font-medium text-[20px] font-title">${o}</p>
+    </a>
+  `;s.appendChild(document.createRange().createContextualFragment(u))},i=()=>{l.disabled=t===1,p.disabled=t===d};l.addEventListener("click",()=>{t>1&&(t--,s.innerHTML="",c(t).then(e=>{const{results:o}=e;o.forEach(n=>{a(n)}),i()}))});p.addEventListener("click",()=>{t<d&&(t++,s.innerHTML="",c(t).then(e=>{const{results:o}=e;o.forEach(n=>{a(n)}),i()}))});
