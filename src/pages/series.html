@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/series.css" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <navbar id="mobile-navbar"></navbar>
+    <!-- Desktop navbar -->
+    <navbar id="desktop-navbar"> </navbar>
+    <!-- Aside Trigger Button -->
+    <button id="aside-trigger"></button>
+    <!-- Mobile Side Menu -->
+    <aside id="aside-mobile"></aside>
+
+    <div class="flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative">
+      <!-- Aside desktop -->
+      <aside id="aside-desktop"></aside>
+      <main
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex items-center w-full min-h-[calc(100vh-100px)] max-w-[1440px] mx-auto"
+      >
+        <section
+          id="movies-container"
+          class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-[100px] lg:mt-0 min-h-[500px]"
+        ></section>
+      </main>
+    </div>
+
+    <script type="module" src="../scripts/common/aside.js"></script>
+    <script src="../scripts/common/navbar.js"></script>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
