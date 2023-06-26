@@ -55,9 +55,9 @@ export const getAnyMovies = async (
   return data;
 };
 
-export const getMoviesOrSeriesSbyTitle = async (title) => {
+export const getMoviesOrSeriesByTitle = async (title, page) => {
   const results = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${title}`,
+    `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${title}&page=${page}`,
   );
   const data = await results.json();
   return data;
