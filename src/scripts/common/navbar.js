@@ -14,30 +14,33 @@ mobileNavbar.innerHTML = `
   <ul
     class="flex items-center px-3 justify-between h-[80px] max-w-[450px] md:max-w-[500px] mx-auto"
   >
-    <li
+    <a
+      href="./main.html"
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
     >
       <i class="fa-solid fa-house fa-lg"></i>
       <p>Home</p>
-    </li>
+    </a>
     <li
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
     >
       <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       <p>Search</p>
     </li>
-    <li
+    <a
+      href="./see-more-movies.html?filter=popular"
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
         >
       <i class="fa-solid fa-film fa-lg"></i>
       <p>Movies</p>
-    </li>
-    <li
+    </a>
+    <a
+      href="./series.html"
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
         >
       <i class="fa-solid fa-video fa-lg"></i>
       <p>Series</p>
-    </li>
+    </a>
   </ul>
 `;
 
@@ -62,15 +65,15 @@ desktopNavbar.innerHTML = `
       <ul
         class="flex items-center gap-5 text-xl font-semibold uppercase tracking-[1.15px]"
       >
-        <li class="hover:text-primaryBtn transition-colors cursor-pointer">
+        <a href="./main.html" class="hover:text-primaryBtn transition-colors cursor-pointer">
           Home
-        </li>
-        <li class="hover:text-primaryBtn transition-colors cursor-pointer">
+        </a>
+        <a href="./see-more-movies.html?filter=popular" class="hover:text-primaryBtn transition-colors cursor-pointer">
           Movies
-        </li>
-        <li class="hover:text-primaryBtn transition-colors cursor-pointer">
+        </a>
+        <a href="./series.html" class="hover:text-primaryBtn transition-colors cursor-pointer">
           Series
-        </li>
+        </a>
       </ul>
     </section>
     <form>

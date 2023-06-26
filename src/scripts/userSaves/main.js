@@ -18,8 +18,27 @@ const filter = new URLSearchParams(window.location.search).get('filter');
 const moviesContainer = document.getElementById('movies-container');
 const tempMoviesContainer = document.createDocumentFragment();
 
+const noFavorites = document.getElementById('no-favorites');
+const noSeeLater = document.getElementById('no-seelater');
+
 getUserById(userId).then((user) => {
   const { favorites, seeLater } = user;
+
+  if (favorites.length === 0 && filter === 'favorites') {
+    noFavorites.classList.replace('hidden', 'flex');
+    moviesContainer.classList.replace('grid', 'hidden');
+  } else if (favorites.length > 0 && filter === 'favorites') {
+    noFavorites.classList.replace('flex', 'hidden');
+    moviesContainer.classList.replace('hidden', 'grid');
+  }
+
+  if (seeLater.length === 0 && filter === 'seeLater') {
+    noSeeLater.classList.replace('hidden', 'flex');
+    moviesContainer.classList.replace('grid', 'hidden');
+  } else if (seeLater.length > 0 && filter === 'seeLater') {
+    noFavorites.classList.replace('flex', 'hidden');
+    moviesContainer.classList.replace('hidden', 'grid');
+  }
 
   if (filter === 'favorites') {
     favorites.forEach((favorite) => {
@@ -77,6 +96,11 @@ getUserById(userId).then((user) => {
                 }
 
                 e.target.closest('a').remove();
+
+                if (moviesContainer.children.length === 0) {
+                  noFavorites.classList.replace('hidden', 'flex');
+                  moviesContainer.classList.replace('grid', 'hidden');
+                }
               });
             } catch (error) {
               errorNotification();
@@ -140,6 +164,11 @@ getUserById(userId).then((user) => {
                 }
 
                 e.target.closest('a').remove();
+
+                if (moviesContainer.children.length === 0) {
+                  noSeeLater.classList.replace('hidden', 'flex');
+                  moviesContainer.classList.replace('grid', 'hidden');
+                }
               });
             } catch (error) {
               errorNotification();
