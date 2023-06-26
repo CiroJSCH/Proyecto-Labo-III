@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { doc, updateDoc, arrayRemove } from 'firebase/firestore';
 import { getMovieDetail } from '../../api/getMovie.js';
-import { db } from '../../firebase/main.js';
+import { db } from '../../firebase/index.js';
 import { errorNotification, successNotification } from '../../tostify/main.js';
 import { checkAuthState, getUserById } from '../common/authUser.js';
 

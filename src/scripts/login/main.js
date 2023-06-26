@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/main.js';
+import { auth } from '../../firebase/index.js';
 import changePasswordVisibility from '../common/changePasswordVisibility.js';
 import errors from '../../firebase/errors.js';
 

@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../../firebase/main.js';
+import { auth, db } from '../../firebase/index.js';
 import errors from '../../firebase/errors.js';
 import changePasswordVisibility from '../common/changePasswordVisibility.js';
 
