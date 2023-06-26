@@ -74,7 +74,7 @@ registerForm.addEventListener('submit', async (e) => {
     });
 
     sessionStorage.setItem('userId', auth.currentUser.uid);
-    window.location.href = `${window.location.origin}/src/pages/main.html`;
+    window.location.href = `${window.location.origin}/src/pages/main-page.html`;
   } catch (error) {
     if (errors[error.code].includes('Email')) {
       emailContainer.classList.replace('border-l-accent', 'border-l-red-500');

@@ -28,7 +28,7 @@ githubBtn.addEventListener('click', async () => {
       });
     }
     sessionStorage.setItem('userId', userID);
-    window.location.href = `${window.location.origin}/src/pages/main.html`;
+    window.location.href = `${window.location.origin}/src/pages/main-page.html`;
   } catch (error) {
     errorNotification();
   }

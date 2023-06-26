@@ -15,7 +15,7 @@ mobileNavbar.innerHTML = `
     class="flex items-center px-3 justify-between h-[80px] max-w-[450px] md:max-w-[500px] mx-auto"
   >
     <a
-      href="./main.html"
+      href="./main-page.html"
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
     >
       <i class="fa-solid fa-house fa-lg"></i>
@@ -65,7 +65,7 @@ desktopNavbar.innerHTML = `
       <ul
         class="flex items-center gap-5 text-xl font-semibold uppercase tracking-[1.15px]"
       >
-        <a href="./main.html" class="hover:text-primaryBtn transition-colors cursor-pointer">
+        <a href="./main-page.html" class="hover:text-primaryBtn transition-colors cursor-pointer">
           Home
         </a>
         <a href="./see-more-movies.html?filter=popular" class="hover:text-primaryBtn transition-colors cursor-pointer">
