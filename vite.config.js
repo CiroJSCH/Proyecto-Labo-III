@@ -17,6 +17,11 @@ export default defineConfig({
         userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
         verMas: resolve(__dirname, 'src/pages/ver-mas.html'),
       },
+      output: {
+        strict: false,
+        entryFileNames: '[name].js',
+        dir: 'dist/assets/',
+      },
     },
   },
   resolve: {
