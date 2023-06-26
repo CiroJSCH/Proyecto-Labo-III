@@ -15,3 +15,4 @@ export const getMovieReviews = async (movieId) => {
   );
   return response.json();
 };
+
