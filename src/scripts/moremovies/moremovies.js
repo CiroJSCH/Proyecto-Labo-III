@@ -1,11 +1,6 @@
-import { getMovies } from '../../api/api.js';
+import { data } from 'autoprefixer';
+import { getMovies, getAnyMovies } from '../../api/api.js';
 import { checkAuthState } from '../../scripts/common/authUser.js';
-
-// checkAuthState((user) => {
-//   if (!user) {
-//     window.location.href = `${window.location.origin}/src/pages/login.html}`;
-//   }
-// });
 
 const moviesContainer = document.querySelector('#movies-container');
 const nextBtn = document.querySelector('#next-button');
@@ -14,19 +9,47 @@ const prevBtn = document.querySelector('#prev-button');
 let currentPage = 1;
 let totalPages = 25;
 
-getMovies(currentPage).then((data) => {
-  const { results } = data;
-  results.forEach((serie) => {
-    generateMovieCard(serie);
-  });
-  updatePaginationButtons();
+checkAuthState((user) => {
+  if (!user) {
+    window.location.href = './login.html';
+  }
 });
+
+const urlParamsCategoryFilter = new URLSearchParams(window.location.search).get(
+  'filter',
+);
+
+if (urlParamsCategoryFilter === 'top_rated') {
+  getAnyMovies(urlParamsCategoryFilter, currentPage).then((data) => {
+    const { results } = data;
+    results.forEach((movie) => {
+      generateMovieCard(movie);
+    });
+    updatePaginationButtons();
+  });
+} else if (urlParamsCategoryFilter === 'upcoming') {
+  getAnyMovies(urlParamsCategoryFilter, currentPage).then((data) => {
+    const { results } = data;
+    results.forEach((movie) => {
+      generateMovieCard(movie);
+    });
+    updatePaginationButtons();
+  });
+} else {
+  getAnyMovies(urlParamsCategoryFilter).then((data) => {
+    const { results } = data;
+    results.forEach((movie) => {
+      generateMovieCard(movie);
+    });
+    updatePaginationButtons();
+  });
+}
 
 nextBtn.addEventListener('click', () => {
   if (currentPage < totalPages) {
     currentPage++;
     moviesContainer.innerHTML = '';
-    getMovies(currentPage).then((data) => {
+    getAnyMovies(urlParamsCategoryFilter, currentPage).then((data) => {
       const { results } = data;
       results.forEach((serie) => {
         generateMovieCard(serie);
@@ -40,7 +63,7 @@ prevBtn.addEventListener('click', () => {
   if (currentPage > 1) {
     currentPage--;
     moviesContainer.innerHTML = '';
-    getMovies(currentPage).then((data) => {
+    getAnyMovies(urlParamsCategoryFilter, currentPage).then((data) => {
       const { results } = data;
       results.forEach((serie) => {
         generateMovieCard(serie);
