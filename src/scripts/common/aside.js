@@ -1,4 +1,8 @@
 import { getUserById, logout } from './authUser.js';
+import { doc, updateDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { db, storage } from '../../firebase/main.js';
+import { successNotification, errorNotification } from '../../tostify/main.js';
 
 const asideTrigger = document.getElementById('aside-trigger');
 
@@ -75,7 +79,7 @@ asideMobile.innerHTML = `
       class="absolute bottom-0 left-0 h-[70px] bg-secondaryBtn w-full flex items-center justify-between px-3"
     >
       <button class="flex items-center gap-2 userinfo">
-        <div class="w-[40px] h-[40px] rounded-full"></div>
+        <div class="w-[40px] h-[40px] rounded-full bg-contain bg-center bg-no-repeat" id="profile-pic-mobile"></div>
         <span class="text-[15px] text-gray-400 font-medium">User</span>
       </button>
       <i class="logout-button fa-solid fa-arrow-right-from-bracket fa-lg text-text"></i>
@@ -159,7 +163,7 @@ asideDesktop.innerHTML = `
         class="userinfo flex items-center gap-0 w-full max-w-[150px] justify-center text-gray-400 hover:text-gray-200 transition-colors"
         id="aside-profile"
       >
-        <div class="w-[40px] h-[40px] rounded-full"></div>
+        <div class="w-[40px] h-[40px] rounded-full bg-contain bg-center bg-no-repeat" id="profile-pic-desktop"></div>
         <p class="text-[20px] font-medium hidden">Username</p>
       </button>
       <button
@@ -178,11 +182,11 @@ asideDesktop.innerHTML = `
 profileModal.innerHTML = `
 <div class="flex w-full items-center justify-center h-screen">
 <div
-  class="bg-secondaryBtn w-[90%] max-w-[350px] h-[250px] py-5 flex flex-col items-center justify-around relative"
+  class="bg-secondaryBtn w-[90%] max-w-[350px] h-[250px] py-5 flex flex-col items-center justify-around relative rounded-md"
 >
-  <div class="relative w-[100px] h-[100px] group cursor-pointer">
+  <div class="relative w-[100px] h-[100px] group cursor-pointer" id="update-photo">
     <div
-      class="rounded-full w-full h-full"
+      class="rounded-full w-full h-full bg-contain bg-center bg-no-repeat"
       id="modal-profile-pic"
     ></div>
     <div
@@ -298,4 +302,48 @@ const closeModalButton = document.getElementById('close-modal-button');
 closeModalButton.addEventListener('click', () => {
   profileModal.classList.replace('block', 'hidden');
   document.body.classList.remove('overflow-hidden');
+});
+
+const profilePic = document.getElementById('update-photo');
+
+profilePic.addEventListener('click', () => {
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/png, image/jpeg';
+
+  fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+
+    const storageRef = ref(
+      storage,
+      `profile-pics/${sessionStorage.getItem('userId')}.jpg`,
+    );
+
+    uploadBytesResumable(storageRef, file)
+      .then((snapshot) => getDownloadURL(snapshot.ref))
+      .then((downloadURL) => {
+        const userId = sessionStorage.getItem('userId');
+        const userRef = doc(db, 'Users', userId);
+        const profilePicDesktop = document.getElementById(
+          'profile-pic-desktop',
+        );
+        const profilePicMobile = document.getElementById('profile-pic-mobile');
+        const modalProfilePic = document.getElementById('modal-profile-pic');
+        profilePicDesktop.style.backgroundImage = `url('${downloadURL}')`;
+        profilePicMobile.style.backgroundImage = `url('${downloadURL}')`;
+        modalProfilePic.style.backgroundImage = `url('${downloadURL}')`;
+
+        return updateDoc(userRef, {
+          profilePicture: downloadURL,
+        });
+      })
+      .then(() => {
+        successNotification('✅ Profile picture updated');
+      })
+      .catch((error) => {
+        errorNotification('❌ Something went wrong');
+      });
+  });
+
+  fileInput.click();
 });
