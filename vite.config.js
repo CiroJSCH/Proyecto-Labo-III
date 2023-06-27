@@ -11,7 +11,6 @@ export default defineConfig({
         register: resolve(__dirname, 'src/pages/register.html'),
         mainPage: resolve(__dirname, 'src/pages/main-page.html'),
         series: resolve(__dirname, 'src/pages/series.html'),
-        vistaGuest: resolve(__dirname, 'src/pages/vista-guest.html'),
         seeMoreMovies: resolve(__dirname, 'src/pages/see-more-movies.html'),
         movieDetail: resolve(__dirname, 'src/pages/movieDetail.html'),
         userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
