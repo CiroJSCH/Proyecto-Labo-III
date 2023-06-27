@@ -12,7 +12,7 @@ mobileNavbar.classList.add(
 );
 mobileNavbar.innerHTML = `
   <ul
-    class="flex items-center px-3 justify-between h-[80px] max-w-[450px] md:max-w-[500px] mx-auto"
+    class="flex items-center px-3 justify-between h-[80px] max-w-[450px] md:max-w-[500px] mx-auto relative"
   >
     <a
       href="./main-page.html"
@@ -22,6 +22,7 @@ mobileNavbar.innerHTML = `
       <p>Home</p>
     </a>
     <li
+      id="searchMobileButton"
       class="flex flex-col gap-3 items-center font-text uppercase text-text"
     >
       <i class="fa-solid fa-magnifying-glass fa-lg"></i>
@@ -41,6 +42,14 @@ mobileNavbar.innerHTML = `
       <i class="fa-solid fa-video fa-lg"></i>
       <p>Series</p>
     </a>
+    <form id="form-search-mobile" class="border absolute -top-[60px] h-[50px] w-[90%] mx-auto bg-secondaryBtn rounded-md p-4 hidden items-center justify-center">
+      <div class="flex items-center justify-between w-full h-full">
+        <input id="search-mobile-value" type="text" class="w-full bg-transparent text-text focus:outline-none"/>
+        <span class="" id="close-search-mobile">
+        <i class="fa-regular fa-circle-xmark fa-2xl text-text"></i>
+        </span>
+      </div>
+    </form>
   </ul>
 `;
 
@@ -105,4 +114,25 @@ searchDesktop.addEventListener('submit', (e) => {
     return null;
   }
   window.location.href = `./filter.html?title=${searchInput.value}`;
+});
+
+const formSearchModal = document.querySelector('#form-search-mobile');
+
+const closeSearchModal = document.querySelector('#close-search-mobile');
+closeSearchModal.addEventListener('click', () => {
+  formSearchModal.classList.replace('flex', 'hidden');
+});
+
+const searchMobileButton = document.querySelector('#searchMobileButton');
+searchMobileButton.addEventListener('click', () => {
+  formSearchModal.classList.replace('hidden', 'flex');
+});
+
+const searchMobileValue = document.querySelector('#search-mobile-value');
+formSearchModal.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!searchMobileValue.value) {
+    return null;
+  }
+  window.location.href = `./filter.html?title=${searchMobileValue.value}`;
 });
