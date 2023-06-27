@@ -16,6 +16,7 @@ export default defineConfig({
         movieDetail: resolve(__dirname, 'src/pages/movieDetail.html'),
         userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
         verMas: resolve(__dirname, 'src/pages/ver-mas.html'),
+        seriesDetail: resolve(__dirname, 'src/pages/seriesDetails.html'),
       },
       // output: {
       //   strict: false,
