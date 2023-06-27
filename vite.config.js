@@ -17,6 +17,7 @@ export default defineConfig({
         userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
         verMas: resolve(__dirname, 'src/pages/ver-mas.html'),
         seriesDetail: resolve(__dirname, 'src/pages/seriesDetails.html'),
+        filter: resolve(__dirname, 'src/pages/filter.html'),
       },
       // output: {
       //   strict: false,

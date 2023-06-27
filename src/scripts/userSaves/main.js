@@ -15,6 +15,10 @@ const userId = sessionStorage.getItem('userId');
 
 const filter = new URLSearchParams(window.location.search).get('filter');
 
+document.title = `CineHUB | ${
+  filter === 'favorites' ? 'Favorites' : 'See Later'
+}`;
+
 const moviesContainer = document.getElementById('movies-container');
 const tempMoviesContainer = document.createDocumentFragment();
 
