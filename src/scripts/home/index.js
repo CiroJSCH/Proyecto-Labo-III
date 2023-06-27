@@ -126,7 +126,7 @@ getPopularSeries().then((response) => {
   const series = response.results;
   series.forEach((serie) => {
     const card = document.createElement('a');
-    card.href = `./seriesDetails.html?serieId=${serie.id}`;
+    card.href = `./seriesDetails.html?movieId=${serie.id}`;
     card.classList.add(
       'swiper-slide',
       'w-full',

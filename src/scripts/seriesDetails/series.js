@@ -27,7 +27,7 @@ const setRatingColor = (rating) => {
 };
 
 getSeriesDetails(movieId).then((response) => {
-  document.title = response.name;
+  document.title = `CineHUB | ${response.name}`;
   movieTitle.innerHTML = response.name;
   moviePoster.style.backgroundImage = `url('https://image.tmdb.org/t/p/w154/${response.poster_path}')`;
   movieBanner.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500/${response.backdrop_path}')`;

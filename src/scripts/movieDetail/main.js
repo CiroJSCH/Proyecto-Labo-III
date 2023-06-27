@@ -27,7 +27,9 @@ const setRatingColor = (rating) => {
 };
 
 getMovieDetail(movieId).then((response) => {
-  movieTitle.innerHTML = response.title;
+  movieTitle.innerHTML = response.title || 'No title';
+  document.title = `CineHUB | ${response.title}`;
+
   moviePoster.style.backgroundImage = `url('https://image.tmdb.org/t/p/w154/${response.poster_path}')`;
   movieBanner.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500/${response.backdrop_path}')`;
   movieRating.innerHTML = response.vote_average.toFixed(2);
@@ -98,7 +100,7 @@ getMovieReviews(movieId).then((response) => {
     <span
       id="review-rating"
       class="absolute bottom-2 right-2 rounded-full ${ratingColor} font-bold font-title border-2 h-[34px] w-[34px] grid place-content-center"
-      >${rating}</span
+      >${rating || '-'}</span
     >
   </li>`;
 

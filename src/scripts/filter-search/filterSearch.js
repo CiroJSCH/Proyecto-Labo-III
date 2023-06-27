@@ -1,13 +1,14 @@
 import { getMoviesOrSeriesByTitle } from '../../api/api.js';
-import { checkAuthState } from '../../scripts/common/authUser.js';
+import { checkAuthState } from '../common/authUser.js';
 
 const queryTitle = new URLSearchParams(window.location.search).get('title');
 const moviesContainer = document.querySelector('#movies-container');
+const paginationContainer = document.querySelector('#pagination-container');
 const nextBtn = document.querySelector('#next-button');
 const prevBtn = document.querySelector('#prev-button');
 const titleContainer = document.querySelector('.titulos');
 const title = document.createElement('h1');
-const notFound = document.querySelector('.found');
+const notFound = document.querySelector('#found-container');
 checkAuthState((user) => {
   if (!user) {
     window.location.href = './login.html';
@@ -21,17 +22,21 @@ title.classList.add(
   'font-title',
 );
 let currentPage = 1;
-let totalPages = 9;
+const totalPages = 9;
+
+document.title = `CineHUB | ${queryTitle}`;
 
 getMoviesOrSeriesByTitle(queryTitle, currentPage).then((data) => {
   const { results } = data;
   if (results.length === 0) {
-    title.textContent = `Movie / Serie "${queryTitle}" Not Found`;
     titleContainer.appendChild(title);
-    notFound.classList.replace('found', 'not-found');
+    notFound.classList.replace('hidden', 'flex');
     moviesContainer.classList.replace('grid', 'found');
+    paginationContainer.classList.replace('flex', 'hidden');
   } else {
     title.textContent = `${queryTitle}`;
+    paginationContainer.classList.replace('hidden', 'flex');
+    notFound.classList.replace('flex', 'hidden');
     titleContainer.appendChild(title);
     results.forEach((movie) => {
       generateMovieCard(movie);

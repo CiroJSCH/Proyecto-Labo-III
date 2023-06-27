@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CineHUB</title>
+    <link rel="icon" href="../images/app-icon.png" />
     <link rel="stylesheet" href="../styles/variables.css" />
     <link rel="stylesheet" href="../styles/filter.css" />
     <link rel="stylesheet" href="../styles/tailwind.css" />
@@ -29,23 +30,26 @@
     <div
       class="bg-backgroundGradient flex flex-col justify-between w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
     >
-      <aside  id="aside-desktop"></aside>
+      <aside id="aside-desktop"></aside>
       <main
         class="lg:px-[80px] pb-[90px] lg:py-[30px] flex flex-col w-full min-h-screen lg:min-h-[calc(100vh-100px)] max-w-[1580px] mx-auto"
       >
-        <div class="titulos">
-        </div>
+        <div class="titulos"></div>
         <br />
         <section
           id="movies-container"
           class="grid grid-cols-12 w-[90%] mx-auto h-auto gap-6 mt-auto lg:mt-0 min-h-[500px]"
-          ></section>
-          <div class="found">
-            <img src="../images/not-found.png" alt="image-not-found">
-          </div>
+        ></section>
+        <div
+          id="found-container"
+          class="found flex flex-col items-center gap-2 mb-5 max-w-[400px] mx-auto"
+        >
+          <img src="../images/not-found.png" alt="image-not-found" />
+          <h4 class="font-title text-[24px] text-text">Search not found</h4>
+        </div>
         <div
           id="pagination-container"
-          class="flex  mb-4 text-white justify-center gap-10"
+          class="flex mb-4 text-white justify-center gap-10 mt-7"
         >
           <button id="prev-button" class="pagination-button" disabled>
             <i class="fas fa-chevron-left"></i> Previous
@@ -56,14 +60,17 @@
         </div>
       </main>
     </div>
-    </div>
+
     <!-- Profile modal -->
     <section
       id="profile-modal"
       class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
     ></section>
 
-    <script type="module" src="../scripts/filter-search/filterSearch.js"></script>
+    <script
+      type="module"
+      src="../scripts/filter-search/filterSearch.js"
+    ></script>
     <script type="module" src="../scripts/common/aside.js"></script>
     <script type="module" src="../scripts/common/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
