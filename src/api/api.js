@@ -69,3 +69,11 @@ export const getSeriesReviews = async (id) => {
   const data = await results.json();
   return data;
 };
+
+export const getMoviesOrSeriesByTitle = async (title, page) => {
+  const results = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${title}&page=${page}`,
+  );
+  const data = await results.json();
+  return data;
+};

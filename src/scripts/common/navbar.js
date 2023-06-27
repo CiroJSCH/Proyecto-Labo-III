@@ -76,11 +76,11 @@ desktopNavbar.innerHTML = `
         </a>
       </ul>
     </section>
-    <form>
+    <form id="searchDesktop">
       <div
         class="bg-white flex items-center justify-between rounded-2xl overflow-hidden"
       >
-        <input
+        <input id="searchInput"
           type="text"
           class="p-2 text-black focus:outline-none"
           placeholder="Search something..."
@@ -95,3 +95,15 @@ desktopNavbar.innerHTML = `
     </form>
   </div>
 `;
+
+const searchDesktop = document.querySelector('#searchDesktop');
+const searchInput = document.querySelector('#searchInput');
+
+searchDesktop.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!searchInput.value) {
+    return null;
+  } else {
+    window.location.href = `./filter.html?title=${searchInput.value}`;
+  }
+});
