@@ -59,9 +59,9 @@ desktopNavbar.classList.add(
 desktopNavbar.innerHTML = `
   <div class="px-[80px] w-full flex items-center justify-between max-w-[1580px] mx-auto">
     <section class="flex items-center gap-5">
-      <h1 class="font-title text-text text-[30px] pl-2">
+      <a class="font-title text-text text-[30px] pl-2" href="./main-page.html">
         Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
-      </h1>
+      </a>
       <ul
         class="flex items-center gap-5 text-xl font-semibold uppercase tracking-[1.15px]"
       >
@@ -103,7 +103,6 @@ searchDesktop.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!searchInput.value) {
     return null;
-  } else {
-    window.location.href = `./filter.html?title=${searchInput.value}`;
   }
+  window.location.href = `./filter.html?title=${searchInput.value}`;
 });

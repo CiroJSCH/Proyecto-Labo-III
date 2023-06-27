@@ -51,9 +51,9 @@ asideMobile.classList.add(
 asideMobile.innerHTML = `
   <div class="h-full flex flex-col relative px-3">
     <section class="flex flex-col h-[60%] py-[100px] gap-8">
-      <h1 class="font-title text-text text-[30px] pl-2">
+      <a href="./main-page.html" class="font-title text-text text-[30px] pl-2">
         Cine<span class="bg-primaryBtn px-1 py-2 rounded-md">HUB</span>
-      </h1>
+      </a>
       <section
         class="flex flex-col items-center gap-7 text-text text-[18px] pt-5"
       >

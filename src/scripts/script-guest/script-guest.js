@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const traerPeliculas = async () => {
   const response = await fetch(
     'https://api.themoviedb.org/3/movie/popular?api_key=7e166e717fba198f23734103f094beb2&page=2',
@@ -22,8 +23,7 @@ traerPeliculas().then((data) => {
     peliculaDiv.classList.add('pelis');
 
     const peliculaLink = document.createElement('a');
-    peliculaLink.href = 'login.html';
-    peliculaLink.target = '_blank';
+    peliculaLink.href = './src/pages/login.html';
 
     const imgContainer = document.createElement('div');
     imgContainer.classList.add('img-container');
@@ -68,8 +68,7 @@ traerSeries().then((data) => {
     serieDiv.classList.add('serie');
 
     const serieLink = document.createElement('a');
-    serieLink.href = 'login.html';
-    serieLink.target = '_blank';
+    serieLink.href = './src/pages/login.html';
 
     const imgElement = document.createElement('img');
     imgElement.src = imagePath;
@@ -144,8 +143,7 @@ const renderTrendingMovies = async () => {
     imgContainer.appendChild(img);
 
     const linkElement = document.createElement('a');
-    linkElement.href = 'login.html';
-    linkElement.target = '_blank';
+    linkElement.href = './src/pages/login.html';
 
     const title = document.createElement('h3');
     title.textContent = movie.title;
