@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+.colors {
+  --text: #fafafa;
+  --background: #0d0d0d;
+  --primary-button: #1a37ad;
+  --secondary-button: #171717;
+  --accent: #173097;
+}
+
 html::-webkit-scrollbar {
   width: 0.5rem;
   background: var(--background);
