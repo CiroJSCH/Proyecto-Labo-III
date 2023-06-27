@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../../firebase/main';
+import { auth, db } from '../../firebase/index.js';
 import { errorNotification } from '../../tostify/main';
 
 const provider = new GoogleAuthProvider();
@@ -23,7 +23,7 @@ googleBtn.addEventListener('click', async () => {
       profilePicture: user.photoURL,
     });
     sessionStorage.setItem('userId', credentials.user.uid);
-    window.location.href = `${window.location.origin}/src/pages/main.html`;
+    window.location.href = `${window.location.origin}/src/pages/main-page.html`;
   } catch (error) {
     errorNotification();
   }

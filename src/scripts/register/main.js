@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../../firebase/main.js';
+import { auth, db } from '../../firebase/index.js';
 import errors from '../../firebase/errors.js';
 import changePasswordVisibility from '../common/changePasswordVisibility.js';
 
@@ -74,7 +74,7 @@ registerForm.addEventListener('submit', async (e) => {
     });
 
     sessionStorage.setItem('userId', auth.currentUser.uid);
-    window.location.href = `${window.location.origin}/src/pages/main.html`;
+    window.location.href = `${window.location.origin}/src/pages/main-page.html`;
   } catch (error) {
     if (errors[error.code].includes('Email')) {
       emailContainer.classList.replace('border-l-accent', 'border-l-red-500');

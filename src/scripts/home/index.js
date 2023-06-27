@@ -1,10 +1,10 @@
+import { checkAuthState } from '../common/authUser.js';
 import {
   getMovies,
   getPopularSeries,
   getTopRatedMovies,
   getUpcomingMovies,
-} from '../../api/api';
-import { checkAuthState } from '../common/authUser';
+} from '../../api/api.js';
 
 checkAuthState((user) => {
   if (!user) {
@@ -126,7 +126,7 @@ getPopularSeries().then((response) => {
   const series = response.results;
   series.forEach((serie) => {
     const card = document.createElement('a');
-    card.href = `./serieDetail.html?serieId=${serie.id}`;
+    card.href = `./seriesDetails.html?serieId=${serie.id}`;
     card.classList.add(
       'swiper-slide',
       'w-full',

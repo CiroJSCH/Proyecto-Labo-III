@@ -8,7 +8,7 @@ import {
   arrayRemove,
 } from 'firebase/firestore';
 import { checkAuthState } from '../common/authUser';
-import { db } from '../../firebase/main';
+import { db } from '../../firebase/index.js';
 import { errorNotification, successNotification } from '../../tostify/main';
 
 const movieId = new URLSearchParams(window.location.search).get('movieId');

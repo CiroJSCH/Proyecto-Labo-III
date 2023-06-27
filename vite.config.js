@@ -6,17 +6,28 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: resolve('index.html'),
-        login: resolve('src/', 'pages/login.html'),
-        register: resolve('src/', 'pages/register.html'),
-        main: resolve('src/', 'pages/main.html'),
-        series: resolve('src/', 'pages/series.html'),
-        vistaGuest: resolve('src/', 'pages/vista-guest.html'),
-        seeMoreMovies: resolve('src/', 'pages/see-more-movies.html'),
-        movieDetail: resolve('src/', 'pages/movieDetail.html'),
-        userSaves: resolve('src/', 'pages/user-saves.html'),
-        verMas: resolve('src/', 'pages/ver-mas.html'),
+        main: resolve(__dirname, 'index.html'),
+        login: resolve(__dirname, 'src/pages/login.html'),
+        register: resolve(__dirname, 'src/pages/register.html'),
+        mainPage: resolve(__dirname, 'src/pages/main-page.html'),
+        series: resolve(__dirname, 'src/pages/series.html'),
+        vistaGuest: resolve(__dirname, 'src/pages/vista-guest.html'),
+        seeMoreMovies: resolve(__dirname, 'src/pages/see-more-movies.html'),
+        movieDetail: resolve(__dirname, 'src/pages/movieDetail.html'),
+        userSaves: resolve(__dirname, 'src/pages/user-saves.html'),
+        verMas: resolve(__dirname, 'src/pages/ver-mas.html'),
       },
+      // output: {
+      //   strict: false,
+      //   entryFileNames: '[name].js',
+      //   dir: 'dist/',
+      // },
     },
   },
+  // resolve: {
+  //   alias: [
+  //     { find: '@', replacement: resolve(__dirname, 'src') },
+  //     { find: '@scripts', replacement: resolve(__dirname, 'src/scripts') },
+  //   ],
+  // },
 });

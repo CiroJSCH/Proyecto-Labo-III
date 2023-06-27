@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/main.js';
+import { auth } from '../../firebase/index.js';
 import changePasswordVisibility from '../common/changePasswordVisibility.js';
 import errors from '../../firebase/errors.js';
 
@@ -37,7 +37,7 @@ signInForm.addEventListener('submit', async (e) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     sessionStorage.setItem('userId', auth.currentUser.uid);
-    window.location.href = `${window.location.origin}/src/pages/main.html`;
+    window.location.href = `${window.location.origin}/src/pages/main-page.html`;
   } catch (error) {
     loginError.innerHTML = errors[error.code];
 
