@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="../styles/variables.css" />
     <link rel="stylesheet" href="../styles/globals.css" />
     <link rel="stylesheet" href="../styles/tailwind.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,135 +27,48 @@
     <!-- Mobile Side Menu -->
     <aside id="aside-mobile"></aside>
 
-    <div
-      class=" flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative"
-    >
+    <div class="flex w-full min-h-[calc(100vh-88px)] lg:pt-[100px] relative">
       <!-- Aside desktop -->
       <aside id="aside-desktop"></aside>
       <main
-      class="lg:px-[80px] pb-[90px] lg:py-[30px] flex items-center w-full min-h-[calc(100vh-100px)] max-w-[1440px] mx-auto"
-    >
-      <div class="user">
-        <div class="left">
-          <img
-            src="https://www.molinarifoto.com.ar/wp-content/uploads/2019/09/Foto-CV-Hombre.jpg"
-            draggable="false"
-            alt="user"
-          />
-          <div class="info">
-            <h1>User</h1>
-            <p>Info</p>
+        class="lg:px-[80px] pb-[90px] lg:py-[30px] flex items-center w-full min-h-[calc(100vh-100px)] max-w-[1440px] mx-auto"
+      >
+        <div class="user">
+          <div class="left" id="profilePicture">
+            <img
+              src="https://us.123rf.com/450wm/get4net/get4net1902/get4net190209043/125446708-usuario-an%C3%B3nimo-sin-rostro.jpg?ver=6"
+              alt=""
+            />
+            <div class="info">
+              <center><h1 id="username"></h1></center>
+            </div>
+          </div>
+          <div class="right">
+            <div class="info">
+              <h3><center>FAVORITES</center></h3>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="favorites"></div>
+              </div>
+            </div>
+            <div class="projects">
+              <h3>SEE LATER</h3>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="seelater"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="right">
-          <div class="info">
-            <h3><center>FAVORITES</center></h3>
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                 
-                /> <h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-              </div>
-          </div>
-          <div class="projects">
-            <h3>SEE LATER</h3>
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-                <div class="swiper-slide"><img
-                  src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2023/05/fast-x-2.jpg"
-                  alt="img"
-                  draggable="false"
-                /><h2>nombre</h2></div>
-              </div>
-      </div>
-    </main>
+      </main>
     </div>
-    
-    <script src="../scripts/common/aside.js"></script>
+    <!-- Profile modal -->
+    <section
+      id="profile-modal"
+      class="min-h-screen h-full hidden w-screen bg-[rgba(0,0,0,0.75)] absolute top-0 z-[80]"
+    ></section>
+
+    <script type="module" src="../scripts/common/aside.js"></script>
     <script src="../scripts/common/navbar.js"></script>
+    <script type="module" src="../scripts/dashboard/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="../scripts/script.js"></script>
   </body>
